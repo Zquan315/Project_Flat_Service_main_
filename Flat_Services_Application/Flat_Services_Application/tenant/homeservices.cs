@@ -214,7 +214,7 @@ namespace Flat_Services_Application.tenant
             }
             else
                 lbID.Text = "";
-            if (tbID.Text == "" || exits_enroll(tbID.Text.ToUpper()))
+            if (exits_enroll(tbID.Text.ToUpper()))
             {
 
                 lbID.Text = "Service is enrolled";
@@ -293,7 +293,7 @@ namespace Flat_Services_Application.tenant
         {
             foreach (ListViewItem item in listView1.Items)
             {
-                if (item.Text == s && item.SubItems[4].ToString() == "wait")
+                if (item.Text == s && item.SubItems[4].Text == "wait")
                     return true;
             }
             return false;

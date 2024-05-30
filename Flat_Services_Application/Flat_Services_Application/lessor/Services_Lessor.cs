@@ -168,7 +168,7 @@ namespace Flat_Services_Application.lessor
                                 
                             }
 
-                            if (data.SubItems[5].ToString() == "wait")
+                            if (arrayValues[3].ToString() == "wait")
                                 listView2.Items.Add(data);   
                                 
                             
