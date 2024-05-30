@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Flat_Services_Application</RootNamespace>
+    <AssemblyName>Flat_Services_Application</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Licensing.6.0.2\lib\net472\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.7.0.0\lib\net472\Bunifu.UI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.1.5.3.2.0.0\lib\net452\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.CommonProtos, Version=2.15.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.CommonProtos.2.15.0\lib\net461\Google.Api.CommonProtos.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.Gax, Version=4.8.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.4.8.0\lib\net462\Google.Api.Gax.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.Gax.Grpc, Version=4.8.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.Grpc.4.8.0\lib\net462\Google.Api.Gax.Grpc.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.67.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.67.0\lib\net462\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.67.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.67.0\lib\net462\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.67.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.67.0\lib\net462\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Cloud.Firestore, Version=3.7.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Cloud.Firestore.3.7.0\lib\net462\Google.Cloud.Firestore.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Cloud.Firestore.V1, Version=3.7.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Cloud.Firestore.V1.3.7.0\lib\net462\Google.Cloud.Firestore.V1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Cloud.Location, Version=2.2.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Cloud.Location.2.2.0\lib\net462\Google.Cloud.Location.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.LongRunning, Version=3.2.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.LongRunning.3.2.0\lib\net462\Google.LongRunning.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.25.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.25.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Auth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Auth.2.60.0\lib\net462\Grpc.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.2.46.6\lib\net45\Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.Api.2.60.0\lib\net462\Grpc.Core.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Net.Client, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Net.Client.2.60.0\lib\net462\Grpc.Net.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Net.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Net.Common.2.60.0\lib\netstandard2.0\Grpc.Net.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=110.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.110.2.0\lib\net471\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.CodeDom, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.8.0.0\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.1\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Linq.Async, Version=6.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Async.6.0.1\lib\netstandard2.0\System.Linq.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Net.Http.WinHttpHandler, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.WinHttpHandler.7.0.0\lib\net462\System.Net.Http.WinHttpHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePass.Designer.cs">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="changePass_forgot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="changePass_forgot.Designer.cs">
+      <DependentUpon>changePass_forgot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\listRequest.cs" />
+    <Compile Include="Class\room1.cs" />
+    <Compile Include="Class\ListServiceForRent.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="ForgotPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPass.Designer.cs">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lessor\Add_Service_Lessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lessor\Add_Service_Lessor.Designer.cs">
+      <DependentUpon>Add_Service_Lessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lessor\Chat_Lessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lessor\Chat_Lessor.Designer.cs">
+      <DependentUpon>Chat_Lessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lessor\Flat_Info_Lessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lessor\Flat_Info_Lessor.Designer.cs">
+      <DependentUpon>Flat_Info_Lessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lessor\Flat_Management_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lessor\Flat_Management_2.Designer.cs">
+      <DependentUpon>Flat_Management_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lessor\Payment_Lessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lessor\Payment_Lessor.Designer.cs">
+      <DependentUpon>Payment_Lessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lessor\Requests_Lessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lessor\Requests_Lessor.Designer.cs">
+      <DependentUpon>Requests_Lessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lessor\Services_Lessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lessor\Services_Lessor.Designer.cs">
+      <DependentUpon>Services_Lessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lessor\Settings_Lessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lessor\Settings_Lessor.Designer.cs">
+      <DependentUpon>Settings_Lessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OTPSignUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OTPSignUP.Designer.cs">
+      <DependentUpon>OTPSignUP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectRoom.Designer.cs">
+      <DependentUpon>SelectRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sign-up.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sign-up.Designer.cs">
+      <DependentUpon>Sign-up.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tenant\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tenant\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tenant\homechating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tenant\homechating.Designer.cs">
+      <DependentUpon>homechating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tenant\homecostsing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tenant\homecostsing.Designer.cs">
+      <DependentUpon>homecostsing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tenant\homeinformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tenant\homeinformation.Designer.cs">
+      <DependentUpon>homeinformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tenant\homenavigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tenant\homenavigation.Designer.cs">
+      <DependentUpon>homenavigation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tenant\homeservices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tenant\homeservices.Designer.cs">
+      <DependentUpon>homeservices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lessor\Home_Lessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lessor\Home_Lessor.Designer.cs">
+      <DependentUpon>Home_Lessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="term.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="term.Designer.cs">
+      <DependentUpon>term.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChangePass.resx">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="changePass_forgot.resx">
+      <DependentUpon>changePass_forgot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPass.resx">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lessor\Add_Service_Lessor.resx">
+      <DependentUpon>Add_Service_Lessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lessor\Chat_Lessor.resx">
+      <DependentUpon>Chat_Lessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lessor\Flat_Info_Lessor.resx">
+      <DependentUpon>Flat_Info_Lessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lessor\Flat_Management_2.resx">
+      <DependentUpon>Flat_Management_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lessor\Home_Lessor.resx">
+      <DependentUpon>Home_Lessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lessor\Payment_Lessor.resx">
+      <DependentUpon>Payment_Lessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lessor\Requests_Lessor.resx">
+      <DependentUpon>Requests_Lessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lessor\Services_Lessor.resx">
+      <DependentUpon>Services_Lessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lessor\Settings_Lessor.resx">
+      <DependentUpon>Settings_Lessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OTPSignUP.resx">
+      <DependentUpon>OTPSignUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SelectRoom.resx">
+      <DependentUpon>SelectRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sign-up.resx">
+      <DependentUpon>Sign-up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tenant\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tenant\homechating.resx">
+      <DependentUpon>homechating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tenant\homecostsing.resx">
+      <DependentUpon>homecostsing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tenant\homeinformation.resx">
+      <DependentUpon>homeinformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tenant\homenavigation.resx">
+      <DependentUpon>homenavigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tenant\homeservices.resx">
+      <DependentUpon>homeservices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="term.resx">
+      <DependentUpon>term.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <Content Include="flatservice-a087e-firebase-adminsdk-e8i8j-118340432f.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="protos\google\api\annotations.proto" />
+    <None Include="protos\google\api\auth.proto" />
+    <None Include="protos\google\api\backend.proto" />
+    <None Include="protos\google\api\billing.proto" />
+    <None Include="protos\google\api\client.proto" />
+    <None Include="protos\google\api\config_change.proto" />
+    <None Include="protos\google\api\consumer.proto" />
+    <None Include="protos\google\api\context.proto" />
+    <None Include="protos\google\api\control.proto" />
+    <None Include="protos\google\api\distribution.proto" />
+    <None Include="protos\google\api\documentation.proto" />
+    <None Include="protos\google\api\endpoint.proto" />
+    <None Include="protos\google\api\error_reason.proto" />
+    <None Include="protos\google\api\field_behavior.proto" />
+    <None Include="protos\google\api\field_info.proto" />
+    <None Include="protos\google\api\http.proto" />
+    <None Include="protos\google\api\httpbody.proto" />
+    <None Include="protos\google\api\label.proto" />
+    <None Include="protos\google\api\launch_stage.proto" />
+    <None Include="protos\google\api\log.proto" />
+    <None Include="protos\google\api\logging.proto" />
+    <None Include="protos\google\api\metric.proto" />
+    <None Include="protos\google\api\monitored_resource.proto" />
+    <None Include="protos\google\api\monitoring.proto" />
+    <None Include="protos\google\api\policy.proto" />
+    <None Include="protos\google\api\quota.proto" />
+    <None Include="protos\google\api\resource.proto" />
+    <None Include="protos\google\api\routing.proto" />
+    <None Include="protos\google\api\service.proto" />
+    <None Include="protos\google\api\source_info.proto" />
+    <None Include="protos\google\api\system_parameter.proto" />
+    <None Include="protos\google\api\usage.proto" />
+    <None Include="protos\google\api\visibility.proto" />
+    <None Include="protos\google\rpc\code.proto" />
+    <None Include="protos\google\rpc\context\attribute_context.proto" />
+    <None Include="protos\google\rpc\context\audit_context.proto" />
+    <None Include="protos\google\rpc\error_details.proto" />
+    <None Include="protos\google\rpc\http.proto" />
+    <None Include="protos\google\rpc\status.proto" />
+    <None Include="protos\google\type\calendar_period.proto" />
+    <None Include="protos\google\type\color.proto" />
+    <None Include="protos\google\type\date.proto" />
+    <None Include="protos\google\type\datetime.proto" />
+    <None Include="protos\google\type\dayofweek.proto" />
+    <None Include="protos\google\type\decimal.proto" />
+    <None Include="protos\google\type\expr.proto" />
+    <None Include="protos\google\type\fraction.proto" />
+    <None Include="protos\google\type\interval.proto" />
+    <None Include="protos\google\type\latlng.proto" />
+    <None Include="protos\google\type\localized_text.proto" />
+    <None Include="protos\google\type\money.proto" />
+    <None Include="protos\google\type\month.proto" />
+    <None Include="protos\google\type\phone_number.proto" />
+    <None Include="protos\google\type\postal_address.proto" />
+    <None Include="protos\google\type\quaternion.proto" />
+    <None Include="protos\google\type\timeofday.proto" />
+    <None Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-anh-mau-bandroll-khai-truong_034110310.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\436766686_756051336663575_1778345745258630373_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\436766686_756051336663575_1778345745258630373_n1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Downloadapp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2024-05-03 003525.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="..\packages\Google.Api.CommonProtos.2.15.0\build\Google.Api.CommonProtos.targets" Condition="Exists('..\packages\Google.Api.CommonProtos.2.15.0\build\Google.Api.CommonProtos.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Google.Api.CommonProtos.2.15.0\build\Google.Api.CommonProtos.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Google.Api.CommonProtos.2.15.0\build\Google.Api.CommonProtos.targets'))" />
+    <Error Condition="!Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
+  </Target>
+  <Import Project="..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" />
+  <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
+</Project>
