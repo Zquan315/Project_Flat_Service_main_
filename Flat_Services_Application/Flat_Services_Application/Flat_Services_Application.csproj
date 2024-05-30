@@ -214,6 +214,7 @@
       <DependentUpon>changePass_forgot.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\listRequest.cs" />
+    <Compile Include="Class\Money_Service.cs" />
     <Compile Include="Class\room1.cs" />
     <Compile Include="Class\ListServiceForRent.cs" />
     <Compile Include="Data.cs" />

@@ -3,6 +3,7 @@ using Flat_Services_Application.Class;
 using Flat_Services_Application.tenant;
 using Google.Cloud.Firestore;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -186,5 +187,127 @@ namespace Flat_Services_Application.lessor
             services_Lessor.StartPosition=FormStartPosition.CenterScreen;
             services_Lessor.Show();
         }
+
+        private async void BrowseBtn_Click(object sender, EventArgs e)
+        {
+            if (listView2.SelectedItems.Count <= 0)
+            {
+                MessageBox.Show("Please select room that you want to browse", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            while (listView2.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listView2.SelectedItems[0];
+                string room = selectedItem.SubItems[0].Text;
+                string id = selectedItem.SubItems[1].Text;
+                string name = selectedItem.SubItems[2].Text;
+                string date = selectedItem.SubItems[3].Text;
+                string time = selectedItem.SubItems[4].Text;
+                //string status = selectedItem.SubItems[5].Text;
+
+                // cap nhat status
+                update_status(room, id, name, date, time);
+                // sen notification
+                send_notification(room, name, date);
+
+                // tinh tien dich vu
+                int total = 0;
+                int charge = 0;
+                Query dc = db.Collection("ListServiceForRent");
+                QuerySnapshot snp = await dc.GetSnapshotAsync();
+
+                foreach (DocumentSnapshot sn in snp)
+                {
+                    ListServiceForRent t = sn.ConvertTo<ListServiceForRent>();
+                    if (sn.Exists)
+                    {
+                        string idd = sn.Id.ToString();
+                        if (idd == id)
+                        {
+                            charge = t.Price * Convert.ToInt32(time);
+                            break;
+                        }
+
+                    }
+                }
+
+                DocumentReference df = db.Collection("ServiceMoney").Document(room);
+
+                DocumentSnapshot snap = await df.GetSnapshotAsync();
+                if (snap.Exists)
+                {
+                    Money_Service m = snap.ConvertTo<Money_Service>();
+                    total = m.Money;
+                }
+
+                Dictionary<string, object> dict = new Dictionary<string, object>();
+                {
+                    dict.Add("Money", total + charge);
+                }
+
+                if (snap.Exists)
+                {
+                    await df.UpdateAsync(dict);
+                }
+
+                listView2.Items.RemoveAt(listView2.SelectedItems[0].Index);
+            }
+        }
+
+        async void update_status(string room, string id, string name, string date, string time)
+        {
+            DocumentReference DOC = db.Collection("ListAwaitService").Document(room);
+            Dictionary<string, object> maindt = new Dictionary<string, object>();
+
+            ArrayList arr = new ArrayList();
+            arr.Add(name);
+            arr.Add(date);
+            arr.Add(time);
+            arr.Add("browsed");
+            maindt.Add(id, arr);
+            await DOC.UpdateAsync(maindt);
+        }
+
+        async void send_notification(string room, string name, string date)
+        {
+            DocumentReference dr = db.Collection("Notification").Document(room);
+            await dr.UpdateAsync("notification", FieldValue.ArrayUnion("Room " + room + " is browsed to use " + name + " on " + date));
+
+            noti_label.Text = "Browsed successfully";
+            noti_label.ForeColor = System.Drawing.Color.Green;
+            await Task.Delay(3000);
+            noti_label.Text = "";
+        }
+
+        private void Add_btn_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Add_Service_Lessor add_Service_Lessor = new Add_Service_Lessor(sdt);
+            add_Service_Lessor.StartPosition = FormStartPosition.CenterScreen;
+            add_Service_Lessor.Show();
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count <= 0)
+            {
+                MessageBox.Show("Please select service that you want to delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            while (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                string ID = selectedItem.SubItems[0].Text;
+                delete_service(ID);
+                listView1.Items.RemoveAt(listView1.SelectedItems[0].Index);
+            }
+        }
+
+        void delete_service(string s)
+        {
+            DocumentReference dr = db.Collection("ListServiceForRent").Document(s);
+            dr.DeleteAsync();
+        }
     }
 }
+
