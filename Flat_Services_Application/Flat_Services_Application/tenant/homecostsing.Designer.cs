@@ -51,6 +51,8 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbBank = new System.Windows.Forms.TextBox();
+            this.cb_AccountNumber = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txbAccount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -79,8 +81,6 @@
             this.homeBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.cb_AccountNumber = new System.Windows.Forms.ComboBox();
-            this.txbBank = new System.Windows.Forms.TextBox();
             this.panelCenterCosts.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -299,6 +299,30 @@
             this.groupBox1.Text = "Information";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // txbBank
+            // 
+            this.txbBank.Enabled = false;
+            this.txbBank.Font = new System.Drawing.Font("Century", 9F);
+            this.txbBank.Location = new System.Drawing.Point(285, 48);
+            this.txbBank.Multiline = true;
+            this.txbBank.Name = "txbBank";
+            this.txbBank.Size = new System.Drawing.Size(360, 46);
+            this.txbBank.TabIndex = 20;
+            // 
+            // cb_AccountNumber
+            // 
+            this.cb_AccountNumber.FormattingEnabled = true;
+            this.cb_AccountNumber.Items.AddRange(new object[] {
+            "1026786953",
+            "711068211500001",
+            "101876590002",
+            "1031968480"});
+            this.cb_AccountNumber.Location = new System.Drawing.Point(285, 116);
+            this.cb_AccountNumber.Name = "cb_AccountNumber";
+            this.cb_AccountNumber.Size = new System.Drawing.Size(360, 46);
+            this.cb_AccountNumber.TabIndex = 18;
+            this.cb_AccountNumber.SelectedIndexChanged += new System.EventHandler(this.cb_AccountNumber_SelectedIndexChanged);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -347,7 +371,7 @@
             this.txbContent.Location = new System.Drawing.Point(285, 305);
             this.txbContent.Multiline = true;
             this.txbContent.Name = "txbContent";
-            this.txbContent.Size = new System.Drawing.Size(360, 103);
+            this.txbContent.Size = new System.Drawing.Size(360, 116);
             this.txbContent.TabIndex = 6;
             this.txbContent.TextChanged += new System.EventHandler(this.txbContent_TextChanged);
             // 
@@ -371,6 +395,7 @@
             this.qrCreateBtn.TabIndex = 7;
             this.qrCreateBtn.Text = "Create QR";
             this.qrCreateBtn.UseVisualStyleBackColor = true;
+            this.qrCreateBtn.Click += new System.EventHandler(this.qrCreateBtn_Click);
             // 
             // btnDelete
             // 
@@ -382,6 +407,7 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // panel2
             // 
@@ -617,30 +643,6 @@
             this.panel5.Size = new System.Drawing.Size(360, 159);
             this.panel5.TabIndex = 1;
             this.panel5.Click += new System.EventHandler(this.panel5_Click);
-            // 
-            // cb_AccountNumber
-            // 
-            this.cb_AccountNumber.FormattingEnabled = true;
-            this.cb_AccountNumber.Items.AddRange(new object[] {
-            "1026786953",
-            "711068211500001",
-            "101876590002",
-            "1031968480"});
-            this.cb_AccountNumber.Location = new System.Drawing.Point(285, 116);
-            this.cb_AccountNumber.Name = "cb_AccountNumber";
-            this.cb_AccountNumber.Size = new System.Drawing.Size(360, 46);
-            this.cb_AccountNumber.TabIndex = 18;
-            this.cb_AccountNumber.SelectedIndexChanged += new System.EventHandler(this.cb_AccountNumber_SelectedIndexChanged);
-            // 
-            // txbBank
-            // 
-            this.txbBank.Enabled = false;
-            this.txbBank.Font = new System.Drawing.Font("Century", 9F);
-            this.txbBank.Location = new System.Drawing.Point(285, 48);
-            this.txbBank.Multiline = true;
-            this.txbBank.Name = "txbBank";
-            this.txbBank.Size = new System.Drawing.Size(360, 46);
-            this.txbBank.TabIndex = 20;
             // 
             // homecostsing
             // 
