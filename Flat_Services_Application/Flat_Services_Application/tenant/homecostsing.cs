@@ -109,5 +109,40 @@ namespace Flat_Services_Application.tenant
         {
 
         }
+        
+
+        private void cb_AccountNumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cb_AccountNumber.Text == "1026786953")
+            {
+                txbBank.Text = "Vietcombank";
+                txbAccount.Text = "TO CONG QUAN";
+                txbContent.Text = "Room " + tbroom.Text + " take a payment on " + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString(); ;
+
+            }
+            else if(cb_AccountNumber.Text == "711068211500001")
+            {
+                txbBank.Text = "Nam A Bank";
+                txbAccount.Text = "NGUYEN THANH THAO";
+                txbContent.Text = "Room " + tbroom.Text + " take a payment on " + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString(); ;
+            }
+            else if( cb_AccountNumber.Text == "101876590002")
+            {
+                txbBank.Text = "Vietinbank";
+                txbAccount.Text = "LE MINH QUAN";
+                txbContent.Text = "Room " + tbroom.Text + " take a payment on " + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString(); ;
+            }
+            else if(cb_AccountNumber.Text == "1031968480")
+            {
+                txbBank.Text = "Vietcombank";
+                txbAccount.Text = "LE MINH QUAN";
+                txbContent.Text = "Room " + tbroom.Text + " take a payment on " + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString(); ;
+            }
+        }
+
+        private void txbContent_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
