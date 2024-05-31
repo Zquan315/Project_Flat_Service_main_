@@ -66,6 +66,7 @@
             this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.note = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.noti_label = new Bunifu.UI.WinForms.BunifuLabel();
             this.BrowseBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.listView2 = new System.Windows.Forms.ListView();
             this.room = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -74,7 +75,6 @@
             this.res = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.noti_label = new Bunifu.UI.WinForms.BunifuLabel();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -967,7 +967,7 @@
             this.bunifuButton1.onHoverState.BorderRadius = 1;
             this.bunifuButton1.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.bunifuButton1.onHoverState.BorderThickness = 1;
-            this.bunifuButton1.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.bunifuButton1.onHoverState.FillColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuButton1.onHoverState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.onHoverState.IconLeftImage = null;
             this.bunifuButton1.onHoverState.IconRightImage = null;
@@ -1059,7 +1059,7 @@
             this.Add_btn.onHoverState.BorderRadius = 1;
             this.Add_btn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.Add_btn.onHoverState.BorderThickness = 1;
-            this.Add_btn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.Add_btn.onHoverState.FillColor = System.Drawing.SystemColors.ActiveCaption;
             this.Add_btn.onHoverState.ForeColor = System.Drawing.Color.White;
             this.Add_btn.onHoverState.IconLeftImage = null;
             this.Add_btn.onHoverState.IconRightImage = null;
@@ -1142,6 +1142,21 @@
             this.tabPage2.Text = "Request";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // noti_label
+            // 
+            this.noti_label.AllowParentOverrides = false;
+            this.noti_label.AutoEllipsis = false;
+            this.noti_label.Cursor = System.Windows.Forms.Cursors.Default;
+            this.noti_label.CursorType = System.Windows.Forms.Cursors.Default;
+            this.noti_label.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noti_label.Location = new System.Drawing.Point(13, 33);
+            this.noti_label.Name = "noti_label";
+            this.noti_label.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.noti_label.Size = new System.Drawing.Size(0, 0);
+            this.noti_label.TabIndex = 15;
+            this.noti_label.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.noti_label.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // BrowseBtn
             // 
             this.BrowseBtn.AllowAnimations = true;
@@ -1205,7 +1220,7 @@
             this.BrowseBtn.onHoverState.BorderRadius = 1;
             this.BrowseBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.BrowseBtn.onHoverState.BorderThickness = 1;
-            this.BrowseBtn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.BrowseBtn.onHoverState.FillColor = System.Drawing.SystemColors.ActiveCaption;
             this.BrowseBtn.onHoverState.ForeColor = System.Drawing.Color.White;
             this.BrowseBtn.onHoverState.IconLeftImage = null;
             this.BrowseBtn.onHoverState.IconRightImage = null;
@@ -1288,20 +1303,6 @@
             this.status.Text = "Status";
             this.status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.status.Width = 185;
-            // 
-            // noti_label
-            // 
-            this.noti_label.AllowParentOverrides = false;
-            this.noti_label.AutoEllipsis = false;
-            this.noti_label.CursorType = System.Windows.Forms.Cursors.Default;
-            this.noti_label.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noti_label.Location = new System.Drawing.Point(13, 33);
-            this.noti_label.Name = "noti_label";
-            this.noti_label.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.noti_label.Size = new System.Drawing.Size(0, 0);
-            this.noti_label.TabIndex = 15;
-            this.noti_label.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.noti_label.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // Services_Lessor
             // 

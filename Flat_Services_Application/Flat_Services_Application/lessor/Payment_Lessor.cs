@@ -1,4 +1,6 @@
-﻿using Flat_Services_Application.tenant;
+﻿using Flat_Services_Application.Class;
+using Flat_Services_Application.tenant;
+using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,7 @@ namespace Flat_Services_Application.lessor
 {
     public partial class Payment_Lessor : Form
     {
+        FirestoreDb db;
         public Payment_Lessor()
         {
             InitializeComponent();
@@ -96,6 +99,102 @@ namespace Flat_Services_Application.lessor
             Payment_Lessor payment_Lessor = new Payment_Lessor(sdt);
             payment_Lessor.StartPosition = FormStartPosition.CenterScreen;
             payment_Lessor.Show();
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            lvData.Items.Clear();
+            if(cbbSearch.Text == "" || cbbSearch.Text == "All")
+            {
+                cbbSearch.Text = "All";
+                load_all_data();
+            }    
+            else
+                load_a_data();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbSearch.Text == "")
+                cbbSearch.Text = "All";
+        }
+
+        private void Payment_Lessor_Load(object sender, EventArgs e)
+        {
+            cbbSearch.Text = "All";
+            //ket noi firestore
+            try
+            {
+                string path = AppDomain.CurrentDomain.BaseDirectory + @"flatservice-a087e-firebase-adminsdk-e8i8j-118340432f.json";
+                Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
+                db = FirestoreDb.Create("flatservice-a087e");
+            }
+            catch
+            {
+                MessageBox.Show("Cann't connect to firestore!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            load_all_data();
+        }
+
+        async void load_all_data()
+        {
+            Query doc = db.Collection("Bill");
+            QuerySnapshot snap = await doc.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot sn in snap)
+            {
+                
+                if (sn.Exists)
+                {
+                    Bill t = sn.ConvertTo<Bill>();
+                    string id = sn.Id.ToString();
+                    ListViewItem data = new ListViewItem(id);
+                    data.SubItems.Add(t.Room_price);
+                    data.SubItems.Add(t.elec);
+                    data.SubItems.Add(t.amount_Elec.ToString());
+                    data.SubItems.Add(t.water);
+                    data.SubItems.Add(t.amount_water.ToString());
+                    data.SubItems.Add(t.clean);
+                    data.SubItems.Add(t.secu);
+                    data.SubItems.Add(t.service);
+                    data.SubItems.Add(t.debit);
+                    data.SubItems.Add(t.total);
+                    lvData.Items.Add(data);
+                }
+            }
+        }
+        async void load_a_data()
+        {
+            Query doc = db.Collection("Bill");
+            QuerySnapshot snap = await doc.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot sn in snap)
+            {
+
+                if (sn.Exists)
+                {
+                    Bill t = sn.ConvertTo<Bill>();
+                    string id = sn.Id.ToString();
+                    if(id == cbbSearch.Text)
+                    {
+                        ListViewItem data = new ListViewItem(id);
+                        data.SubItems.Add(t.Room_price);
+                        data.SubItems.Add(t.elec);
+                        data.SubItems.Add(t.amount_Elec.ToString());
+                        data.SubItems.Add(t.water);
+                        data.SubItems.Add(t.amount_water.ToString());
+                        data.SubItems.Add(t.clean);
+                        data.SubItems.Add(t.secu);
+                        data.SubItems.Add(t.service);
+                        data.SubItems.Add(t.debit);
+                        data.SubItems.Add(t.total);
+                        lvData.Items.Add(data);
+                        return;
+                    }    
+                    
+                }
+            }
         }
     }
 }

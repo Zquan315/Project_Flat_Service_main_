@@ -1,7 +1,9 @@
 ﻿using Bunifu.UI.WinForms;
 using FireSharp.Config;
 using FireSharp.Interfaces;
+using FireSharp.Response;
 using Google.Cloud.Firestore;
+using Google.Cloud.Firestore.V1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Flat_Services_Application.lessor
 {
@@ -109,6 +112,74 @@ namespace Flat_Services_Application.lessor
             {
                 MessageBox.Show("Document does not exist");
             }
+        }
+
+        private async void btnReset_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure reset this room?", "Reset", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+
+
+                DocumentReference docRef = db.Collection("RoomInfo").Document(IDRoomLb.Text);
+                DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+
+                if (snapshot.Exists)
+                {
+                    Dictionary<string, object> updates = new Dictionary<string, object>();
+
+                    foreach (var field in snapshot.ToDictionary())
+                    {
+                        if (field.Value is IList<object>)
+                        {
+                            updates[field.Key] = FieldValue.Delete;
+                            // cap nhat lai user
+                            FirebaseResponse responds = await client.GetAsync("Account Tenant/" + field.Key.ToString());
+                            if (responds.Body != "null")
+                            {
+                                Data dt = responds.ResultAs<Data>();
+                                var data = new Data()
+                                {
+                                    name = dt.name,
+                                    email = dt.email,
+                                    pass = dt.pass,
+                                    phone = dt.phone,
+                                    ID = dt.ID,
+                                    date = dt.date,
+                                    objects = dt.objects,
+                                    status = 0,
+                                    remember = dt.remember,
+                                    room = "",
+                                };
+
+                                FirebaseResponse ud = await client.UpdateAsync("Account Tenant/" + field.Key.ToString(), data);
+                                Data result = ud.ResultAs<Data>();
+                            }
+
+                            //cap nhat lai phong
+                            DocumentReference docref = db.Collection("SelectRoom").Document(IDRoomLb.Text);
+                            Dictionary<string, object> dict = new Dictionary<string, object>();
+                            {
+                                dict.Add("Status", 0);
+                            }
+                            DocumentSnapshot snap = await docref.GetSnapshotAsync();
+                            if (snap.Exists)
+                            {
+                                await docref.UpdateAsync(dict);
+                            }
+                        }
+                    }
+
+                    if (updates.Count > 0)
+                    {
+                        await docRef.UpdateAsync(updates);
+                        MessageBox.Show("Reset successfully", "Inforrmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+                lvData.Items.Clear();
+            }
+            else
+                DialogResult = DialogResult.Cancel;
         }
     }
 }

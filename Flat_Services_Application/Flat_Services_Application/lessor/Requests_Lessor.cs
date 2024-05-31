@@ -196,6 +196,7 @@ namespace Flat_Services_Application.lessor
                 add_data_roomInfo(phone_num, room, name, id, date);
                 //xoa ra khoi listview
                 lvRequest.Items.RemoveAt(lvRequest.SelectedItems[0].Index);
+
             }
         }
 

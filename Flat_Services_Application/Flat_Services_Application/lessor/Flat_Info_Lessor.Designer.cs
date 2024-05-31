@@ -123,7 +123,7 @@
             this.btnReset.onHoverState.BorderRadius = 1;
             this.btnReset.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnReset.onHoverState.BorderThickness = 1;
-            this.btnReset.onHoverState.FillColor = System.Drawing.Color.White;
+            this.btnReset.onHoverState.FillColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnReset.onHoverState.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReset.onHoverState.IconLeftImage = null;
             this.btnReset.onHoverState.IconRightImage = null;
@@ -139,7 +139,7 @@
             this.btnReset.OnPressedState.BorderRadius = 1;
             this.btnReset.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnReset.OnPressedState.BorderThickness = 1;
-            this.btnReset.OnPressedState.FillColor = System.Drawing.Color.White;
+            this.btnReset.OnPressedState.FillColor = System.Drawing.SystemColors.Highlight;
             this.btnReset.OnPressedState.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReset.OnPressedState.IconLeftImage = null;
             this.btnReset.OnPressedState.IconRightImage = null;
@@ -150,6 +150,7 @@
             this.btnReset.TextMarginLeft = 0;
             this.btnReset.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnReset.UseDefaultRadiusAndThickness = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // Close_btn
             // 
@@ -214,7 +215,7 @@
             this.Close_btn.onHoverState.BorderRadius = 1;
             this.Close_btn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.Close_btn.onHoverState.BorderThickness = 1;
-            this.Close_btn.onHoverState.FillColor = System.Drawing.Color.White;
+            this.Close_btn.onHoverState.FillColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Close_btn.onHoverState.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Close_btn.onHoverState.IconLeftImage = null;
             this.Close_btn.onHoverState.IconRightImage = null;
@@ -230,7 +231,7 @@
             this.Close_btn.OnPressedState.BorderRadius = 1;
             this.Close_btn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.Close_btn.OnPressedState.BorderThickness = 1;
-            this.Close_btn.OnPressedState.FillColor = System.Drawing.Color.White;
+            this.Close_btn.OnPressedState.FillColor = System.Drawing.SystemColors.Highlight;
             this.Close_btn.OnPressedState.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Close_btn.OnPressedState.IconLeftImage = null;
             this.Close_btn.OnPressedState.IconRightImage = null;

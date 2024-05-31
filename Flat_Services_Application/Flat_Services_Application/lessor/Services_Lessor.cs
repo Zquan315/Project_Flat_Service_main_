@@ -266,6 +266,11 @@ namespace Flat_Services_Application.lessor
             arr.Add("browsed");
             maindt.Add(id, arr);
             await DOC.UpdateAsync(maindt);
+
+            noti_label.Text = "Browsed successfully";
+            noti_label.ForeColor = System.Drawing.Color.Green;
+            await Task.Delay(3000);
+            noti_label.Text = "";
         }
 
         async void send_notification(string room, string name, string date)
@@ -273,10 +278,7 @@ namespace Flat_Services_Application.lessor
             DocumentReference dr = db.Collection("Notification").Document(room);
             await dr.UpdateAsync("notification", FieldValue.ArrayUnion("Room " + room + " is browsed to use " + name + " on " + date));
 
-            noti_label.Text = "Browsed successfully";
-            noti_label.ForeColor = System.Drawing.Color.Green;
-            await Task.Delay(3000);
-            noti_label.Text = "";
+           
         }
 
         private void Add_btn_Click_1(object sender, EventArgs e)
