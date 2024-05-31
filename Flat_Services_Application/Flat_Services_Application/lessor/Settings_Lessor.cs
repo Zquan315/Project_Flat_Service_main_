@@ -28,6 +28,7 @@ namespace Flat_Services_Application.lessor
             InitializeComponent();
         }
         string sdt;
+        string obj = "";
         public Settings_Lessor(string sdt)
         {
             InitializeComponent();
@@ -120,6 +121,7 @@ namespace Flat_Services_Application.lessor
                 Name_tb.Text = dt.name;
                 Email_tb.Text = dt.email;
                 ID_tb.Text = dt.ID;
+                obj = dt.objects;
             }
         }
 
@@ -134,7 +136,7 @@ namespace Flat_Services_Application.lessor
         private void ChangeBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ChangePass c = new ChangePass(sdt);
+            ChangePass c = new ChangePass(sdt, obj);
             c.StartPosition = FormStartPosition.CenterScreen;
             c.Show();
 

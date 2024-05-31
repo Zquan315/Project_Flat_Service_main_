@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,6 +28,7 @@ namespace Flat_Services_Application.tenant
             InitializeComponent();
         }
         string room;
+        string obj = "";
         public Setting(string s, string p)
         {
             InitializeComponent();
@@ -56,6 +58,7 @@ namespace Flat_Services_Application.tenant
                 Name_tb.Text = dt.name;
                 Email_tb.Text = dt.email;
                 ID_tb.Text = dt.ID;
+                obj = dt.objects;
             }
            
            
@@ -138,8 +141,104 @@ namespace Flat_Services_Application.tenant
         private void tbChangePass_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ChangePass p = new ChangePass(Phone_tb.Text);
+            ChangePass p = new ChangePass(Phone_tb.Text, obj);
+            p.StartPosition = FormStartPosition.CenterScreen;
             p.Show();
+        }
+
+        private async void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            if (Name_tb.Text == "")
+            {
+                lbName.Text = "*";
+                lbName.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+            else
+            {
+                lbName.Text = "";
+            }
+
+            if (Email_tb.Text == "" || !IsEmail(Email_tb.Text))
+            {
+                lbEmail.Text = "*";
+                lbEmail.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+            else
+            {
+                lbEmail.Text = "";
+            }
+
+            // Cap nhat lai user
+            FirebaseResponse respond = await client.GetAsync("Account Tenant/" + Phone_tb.Text);
+            if (respond.Body != "null")
+            {
+                Data dt = respond.ResultAs<Data>();
+                var data = new Data()
+                {
+                    name = Name_tb.Text,
+                    email = Email_tb.Text,
+                    pass = dt.pass,
+                    phone = dt.phone,
+                    ID = dt.ID,
+                    date = dt.date,
+                    objects = dt.objects,
+                    status = dt.status,
+                    remember = dt.remember,
+                    room = dt.room,
+                };
+                FirebaseResponse ud = await client.UpdateAsync("Account Tenant/" + Phone_tb.Text, data);
+                Data result = ud.ResultAs<Data>();
+
+                lbNoti.Text = "Save successfully";
+                lbNoti.ForeColor = System.Drawing.Color.Green;
+                await Task.Delay(3000);
+                lbNoti.Text = "";
+            }
+        }
+
+        private void Name_tb_TextChanged(object sender, EventArgs e)
+        {
+            if (Name_tb.Text == "")
+            {
+                lbName.Text = "*";
+                lbName.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lbName.Text = "";
+            }
+        }
+        public bool IsEmail(string email)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(email);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+        private void Email_tb_TextChanged(object sender, EventArgs e)
+        {
+            
+            if (Email_tb.Text == "" || !IsEmail(Email_tb.Text))
+            {
+                lbEmail.Text = "*";
+                lbEmail.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lbEmail.Text = "";
+            }
+        }
+
+        private void lbName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

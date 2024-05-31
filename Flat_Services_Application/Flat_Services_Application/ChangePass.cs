@@ -26,22 +26,34 @@ namespace Flat_Services_Application
         {
             InitializeComponent();
         }
-        string sdt;
-        public ChangePass(string sdt)
+        string sdt, obj;
+        public ChangePass(string sdt, string obj)
         {
             InitializeComponent();
             this.sdt = sdt; 
+            this.obj = obj;
         }
         private async void btnConfirm_Click(object sender, EventArgs e)
         {
             string s = "";
-
-            FirebaseResponse Response = await client.GetAsync("Account Lessor/" + sdt);
-            if (Response.Body != "null")
+            if(obj == "Lessor")
             {
-                Data dt = Response.ResultAs<Data>();
-                s = dt.pass;
-            }
+                FirebaseResponse Response = await client.GetAsync("Account Lessor/" + sdt);
+                if (Response.Body != "null")
+                {
+                    Data dt = Response.ResultAs<Data>();
+                    s = dt.pass;
+                }
+            }    
+            else if(obj == "Tenant")
+            {
+                FirebaseResponse Response = await client.GetAsync("Account Tenant/" + sdt);
+                if (Response.Body != "null")
+                {
+                    Data dt = Response.ResultAs<Data>();
+                    s = dt.pass;
+                }
+            }    
 
             // dieu kien xet day phai la mat khau hien tai hay k -> kiem tra trong database, truy xuat bnag hien thi std
             if (tbCurrPass.Text == "" || !IsPass(tbCurrPass.Text))
@@ -85,27 +97,52 @@ namespace Flat_Services_Application
             {
                 lb3.Text = "";
             }
-
-            FirebaseResponse respond = await client.GetAsync("Account Lessor/" + sdt);
-            if (respond.Body != "null")
+            if(obj == "Lessor")
             {
-                Data dt = respond.ResultAs<Data>();
-                var data = new Data()
+                FirebaseResponse respond = await client.GetAsync("Account Lessor/" + sdt);
+                if (respond.Body != "null")
                 {
-                    name = dt.name,
-                    email = dt.email,
-                    pass = tbNewPass.Text,
-                    phone = dt.phone,
-                    ID = dt.ID,
-                    date = dt.date,
-                    objects = dt.objects,
-                    status = dt.status,
-                    remember = dt.remember,
-                    room = dt.room,
-                };
-                FirebaseResponse ud = await client.UpdateAsync("Account Lessor/" + sdt, data);
-                Data result = ud.ResultAs<Data>();
-            }
+                    Data dt = respond.ResultAs<Data>();
+                    var data = new Data()
+                    {
+                        name = dt.name,
+                        email = dt.email,
+                        pass = tbNewPass.Text,
+                        phone = dt.phone,
+                        ID = dt.ID,
+                        date = dt.date,
+                        objects = dt.objects,
+                        status = dt.status,
+                        remember = dt.remember,
+                        room = dt.room,
+                    };
+                    FirebaseResponse ud = await client.UpdateAsync("Account Lessor/" + sdt, data);
+                    Data result = ud.ResultAs<Data>();
+                }
+            }    
+            else if(obj == "Tenant")
+            {
+                FirebaseResponse respond = await client.GetAsync("Account Tenant/" + sdt);
+                if (respond.Body != "null")
+                {
+                    Data dt = respond.ResultAs<Data>();
+                    var data = new Data()
+                    {
+                        name = dt.name,
+                        email = dt.email,
+                        pass = tbNewPass.Text,
+                        phone = dt.phone,
+                        ID = dt.ID,
+                        date = dt.date,
+                        objects = dt.objects,
+                        status = dt.status,
+                        remember = dt.remember,
+                        room = dt.room,
+                    };
+                    FirebaseResponse ud = await client.UpdateAsync("Account Tenant/" + sdt, data);
+                    Data result = ud.ResultAs<Data>();
+                }
+            }    
 
             MessageBox.Show("Change Password successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //dieu kien de confirm

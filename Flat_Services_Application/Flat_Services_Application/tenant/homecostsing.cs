@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Flat_Services_Application.Class;
+using Google.Cloud.Firestore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,7 @@ namespace Flat_Services_Application.tenant
 {
     public partial class homecostsing : Form
     {
+        FirestoreDb db;
         public homecostsing()
         {
             InitializeComponent();
@@ -27,8 +30,57 @@ namespace Flat_Services_Application.tenant
         {
             this.costsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)41))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.costsBtn.ForeColor = Color.White;
+
+            //ket noi firestore
+            try
+            {
+                string path = AppDomain.CurrentDomain.BaseDirectory + @"flatservice-a087e-firebase-adminsdk-e8i8j-118340432f.json";
+                Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
+                db = FirestoreDb.Create("flatservice-a087e");
+            }
+            catch
+            {
+                MessageBox.Show("Cann't connect to firestore!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            load_data();
+            
         }
 
+        async void load_data()
+        {
+            Query doc = db.Collection("Bill");
+            QuerySnapshot snap = await doc.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot sn in snap)
+            {
+
+                if (sn.Exists)
+                {
+                    Bill t = sn.ConvertTo<Bill>();
+                    string id = sn.Id.ToString();
+                    if (id == tbroom.Text && t.total != "")
+                    {
+                        ListViewItem data = new ListViewItem(id);
+                        data.SubItems.Add(t.Room_price);
+                        data.SubItems.Add(t.elec);
+                        data.SubItems.Add(t.amount_Elec.ToString());
+                        data.SubItems.Add(t.water);
+                        data.SubItems.Add(t.amount_water.ToString());
+                        data.SubItems.Add(t.clean);
+                        data.SubItems.Add(t.secu);
+                        data.SubItems.Add(t.service);
+                        data.SubItems.Add(t.debit);
+                        data.SubItems.Add(t.total);
+                        txbTotalMoney.Text = t.total;
+                        listView1.Items.Add(data);
+
+                        return;
+                    }
+
+                }
+            }
+        }
         private void homeBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
