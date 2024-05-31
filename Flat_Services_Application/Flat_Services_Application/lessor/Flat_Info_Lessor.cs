@@ -165,7 +165,21 @@ namespace Flat_Services_Application.lessor
                             if (snap.Exists)
                             {
                                 await docref.UpdateAsync(dict);
+
                             }
+                            // Reset notification
+                            ResetNoti(IDRoomLb.Text);
+
+                            // Reset debit
+                            ResetDebit(IDRoomLb.Text);
+
+                            // Reset ListAwaitService
+                            ResetAwaitService(IDRoomLb.Text);
+
+                            // Reset ServiceMoney
+                            ResetServiceMoney(IDRoomLb.Text);
+
+                            // Reset bill
                         }
                     }
 
@@ -180,6 +194,76 @@ namespace Flat_Services_Application.lessor
             }
             else
                 DialogResult = DialogResult.Cancel;
+
+
+        }
+
+        async void ResetNoti(string s)
+        {
+            DocumentReference docRef = db.Collection("Notification").Document(s);
+
+
+            Dictionary<string, object> updates = new Dictionary<string, object>
+                    {
+                        { "notification", new List<object>() }
+                    };
+
+            await docRef.UpdateAsync(updates);
+        }
+
+        async void ResetDebit(string s)
+        {
+            DocumentReference docref = db.Collection("ListDebit").Document(s);
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            {
+                dict.Add("debit", 0);
+            }
+            DocumentSnapshot snap = await docref.GetSnapshotAsync();
+            if (snap.Exists)
+            {
+                await docref.UpdateAsync(dict);
+
+            }
+        }
+
+        async void ResetAwaitService(string s)
+        {
+            DocumentReference docRef = db.Collection("ListAwaitService").Document(s);
+            DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+
+            if (snapshot.Exists)
+            {
+                Dictionary<string, object> updates = new Dictionary<string, object>();
+
+                foreach (var field in snapshot.ToDictionary())
+                {
+                    if (field.Value is IList<object>)
+                    {
+                        updates[field.Key] = FieldValue.Delete;
+                    }
+                }
+
+                if (updates.Count > 0)
+                {
+                    await docRef.UpdateAsync(updates);
+
+                }
+            }
+        }
+
+        async void ResetServiceMoney(string s)
+        {
+            DocumentReference docref = db.Collection("ServiceMoney").Document(s);
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            {
+                dict.Add("Money", 0);
+            }
+            DocumentSnapshot snap = await docref.GetSnapshotAsync();
+            if (snap.Exists)
+            {
+                await docref.UpdateAsync(dict);
+
+            }
         }
     }
 }

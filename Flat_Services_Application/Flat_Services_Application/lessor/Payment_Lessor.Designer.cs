@@ -56,6 +56,8 @@
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuPanel5 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.lbwater = new System.Windows.Forms.Label();
+            this.lbElec = new System.Windows.Forms.Label();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tbWater = new System.Windows.Forms.TextBox();
@@ -66,7 +68,7 @@
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.Charge_btn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.Send_BillBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.Reset_BillBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lvData = new System.Windows.Forms.ListView();
@@ -89,8 +91,9 @@
             this.lvDebit = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lbElec = new System.Windows.Forms.Label();
-            this.lbwater = new System.Windows.Forms.Label();
+            this.lbCharge = new System.Windows.Forms.Label();
+            this.lbReset = new System.Windows.Forms.Label();
+            this.lbAdd = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -875,6 +878,8 @@
             this.bunifuPanel5.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel5.BorderRadius = 3;
             this.bunifuPanel5.BorderThickness = 1;
+            this.bunifuPanel5.Controls.Add(this.lbReset);
+            this.bunifuPanel5.Controls.Add(this.lbCharge);
             this.bunifuPanel5.Controls.Add(this.lbwater);
             this.bunifuPanel5.Controls.Add(this.lbElec);
             this.bunifuPanel5.Controls.Add(this.bunifuCustomLabel4);
@@ -887,13 +892,34 @@
             this.bunifuPanel5.Controls.Add(this.bunifuCustomLabel3);
             this.bunifuPanel5.Controls.Add(this.bunifuCustomLabel2);
             this.bunifuPanel5.Controls.Add(this.Charge_btn);
-            this.bunifuPanel5.Controls.Add(this.Send_BillBtn);
+            this.bunifuPanel5.Controls.Add(this.Reset_BillBtn);
             this.bunifuPanel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.bunifuPanel5.Location = new System.Drawing.Point(240, 102);
             this.bunifuPanel5.Name = "bunifuPanel5";
             this.bunifuPanel5.ShowBorders = true;
             this.bunifuPanel5.Size = new System.Drawing.Size(943, 155);
             this.bunifuPanel5.TabIndex = 13;
+            this.bunifuPanel5.Click += new System.EventHandler(this.bunifuPanel5_Click);
+            // 
+            // lbwater
+            // 
+            this.lbwater.AutoSize = true;
+            this.lbwater.ForeColor = System.Drawing.Color.Red;
+            this.lbwater.Location = new System.Drawing.Point(366, 70);
+            this.lbwater.Name = "lbwater";
+            this.lbwater.Size = new System.Drawing.Size(12, 16);
+            this.lbwater.TabIndex = 19;
+            this.lbwater.Text = "*";
+            // 
+            // lbElec
+            // 
+            this.lbElec.AutoSize = true;
+            this.lbElec.ForeColor = System.Drawing.Color.Red;
+            this.lbElec.Location = new System.Drawing.Point(366, 28);
+            this.lbElec.Name = "lbElec";
+            this.lbElec.Size = new System.Drawing.Size(12, 16);
+            this.lbElec.TabIndex = 18;
+            this.lbElec.Text = "*";
             // 
             // bunifuCustomLabel4
             // 
@@ -919,6 +945,7 @@
             this.tbWater.Name = "tbWater";
             this.tbWater.Size = new System.Drawing.Size(100, 22);
             this.tbWater.TabIndex = 8;
+            this.tbWater.TextChanged += new System.EventHandler(this.tbWater_TextChanged);
             // 
             // tbElec
             // 
@@ -926,6 +953,7 @@
             this.tbElec.Name = "tbElec";
             this.tbElec.Size = new System.Drawing.Size(100, 22);
             this.tbElec.TabIndex = 7;
+            this.tbElec.TextChanged += new System.EventHandler(this.tbElec_TextChanged);
             // 
             // search_Btn
             // 
@@ -1181,96 +1209,97 @@
             this.Charge_btn.UseDefaultRadiusAndThickness = true;
             this.Charge_btn.Click += new System.EventHandler(this.Charge_btn_Click);
             // 
-            // Send_BillBtn
+            // Reset_BillBtn
             // 
-            this.Send_BillBtn.AllowAnimations = true;
-            this.Send_BillBtn.AllowMouseEffects = true;
-            this.Send_BillBtn.AllowToggling = false;
-            this.Send_BillBtn.AnimationSpeed = 200;
-            this.Send_BillBtn.AutoGenerateColors = false;
-            this.Send_BillBtn.AutoRoundBorders = false;
-            this.Send_BillBtn.AutoSizeLeftIcon = true;
-            this.Send_BillBtn.AutoSizeRightIcon = true;
-            this.Send_BillBtn.BackColor = System.Drawing.Color.Transparent;
-            this.Send_BillBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.Send_BillBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Send_BillBtn.BackgroundImage")));
-            this.Send_BillBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.Send_BillBtn.ButtonText = "Send bill";
-            this.Send_BillBtn.ButtonTextMarginLeft = 0;
-            this.Send_BillBtn.ColorContrastOnClick = 45;
-            this.Send_BillBtn.ColorContrastOnHover = 45;
-            this.Send_BillBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Reset_BillBtn.AllowAnimations = true;
+            this.Reset_BillBtn.AllowMouseEffects = true;
+            this.Reset_BillBtn.AllowToggling = false;
+            this.Reset_BillBtn.AnimationSpeed = 200;
+            this.Reset_BillBtn.AutoGenerateColors = false;
+            this.Reset_BillBtn.AutoRoundBorders = false;
+            this.Reset_BillBtn.AutoSizeLeftIcon = true;
+            this.Reset_BillBtn.AutoSizeRightIcon = true;
+            this.Reset_BillBtn.BackColor = System.Drawing.Color.Transparent;
+            this.Reset_BillBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.Reset_BillBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Reset_BillBtn.BackgroundImage")));
+            this.Reset_BillBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.Reset_BillBtn.ButtonText = "Reset bill";
+            this.Reset_BillBtn.ButtonTextMarginLeft = 0;
+            this.Reset_BillBtn.ColorContrastOnClick = 45;
+            this.Reset_BillBtn.ColorContrastOnHover = 45;
+            this.Reset_BillBtn.Cursor = System.Windows.Forms.Cursors.Default;
             borderEdges23.BottomLeft = true;
             borderEdges23.BottomRight = true;
             borderEdges23.TopLeft = true;
             borderEdges23.TopRight = true;
-            this.Send_BillBtn.CustomizableEdges = borderEdges23;
-            this.Send_BillBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Send_BillBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.Send_BillBtn.DisabledFillColor = System.Drawing.Color.Empty;
-            this.Send_BillBtn.DisabledForecolor = System.Drawing.Color.Empty;
-            this.Send_BillBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.Send_BillBtn.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Send_BillBtn.ForeColor = System.Drawing.Color.White;
-            this.Send_BillBtn.IconLeft = null;
-            this.Send_BillBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Send_BillBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.Send_BillBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.Send_BillBtn.IconMarginLeft = 11;
-            this.Send_BillBtn.IconPadding = 10;
-            this.Send_BillBtn.IconRight = null;
-            this.Send_BillBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Send_BillBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.Send_BillBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.Send_BillBtn.IconSize = 25;
-            this.Send_BillBtn.IdleBorderColor = System.Drawing.Color.Empty;
-            this.Send_BillBtn.IdleBorderRadius = 0;
-            this.Send_BillBtn.IdleBorderThickness = 0;
-            this.Send_BillBtn.IdleFillColor = System.Drawing.Color.Empty;
-            this.Send_BillBtn.IdleIconLeftImage = null;
-            this.Send_BillBtn.IdleIconRightImage = null;
-            this.Send_BillBtn.IndicateFocus = false;
-            this.Send_BillBtn.Location = new System.Drawing.Point(781, 21);
-            this.Send_BillBtn.Name = "Send_BillBtn";
-            this.Send_BillBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.Send_BillBtn.OnDisabledState.BorderRadius = 1;
-            this.Send_BillBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.Send_BillBtn.OnDisabledState.BorderThickness = 1;
-            this.Send_BillBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.Send_BillBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.Send_BillBtn.OnDisabledState.IconLeftImage = null;
-            this.Send_BillBtn.OnDisabledState.IconRightImage = null;
-            this.Send_BillBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.Send_BillBtn.onHoverState.BorderRadius = 1;
-            this.Send_BillBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.Send_BillBtn.onHoverState.BorderThickness = 1;
-            this.Send_BillBtn.onHoverState.FillColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Send_BillBtn.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.Send_BillBtn.onHoverState.IconLeftImage = null;
-            this.Send_BillBtn.onHoverState.IconRightImage = null;
-            this.Send_BillBtn.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.Send_BillBtn.OnIdleState.BorderRadius = 1;
-            this.Send_BillBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.Send_BillBtn.OnIdleState.BorderThickness = 1;
-            this.Send_BillBtn.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.Send_BillBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.Send_BillBtn.OnIdleState.IconLeftImage = null;
-            this.Send_BillBtn.OnIdleState.IconRightImage = null;
-            this.Send_BillBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.Send_BillBtn.OnPressedState.BorderRadius = 1;
-            this.Send_BillBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.Send_BillBtn.OnPressedState.BorderThickness = 1;
-            this.Send_BillBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.Send_BillBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.Send_BillBtn.OnPressedState.IconLeftImage = null;
-            this.Send_BillBtn.OnPressedState.IconRightImage = null;
-            this.Send_BillBtn.Size = new System.Drawing.Size(150, 39);
-            this.Send_BillBtn.TabIndex = 0;
-            this.Send_BillBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Send_BillBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Send_BillBtn.TextMarginLeft = 0;
-            this.Send_BillBtn.TextPadding = new System.Windows.Forms.Padding(0);
-            this.Send_BillBtn.UseDefaultRadiusAndThickness = true;
+            this.Reset_BillBtn.CustomizableEdges = borderEdges23;
+            this.Reset_BillBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Reset_BillBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.Reset_BillBtn.DisabledFillColor = System.Drawing.Color.Empty;
+            this.Reset_BillBtn.DisabledForecolor = System.Drawing.Color.Empty;
+            this.Reset_BillBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.Reset_BillBtn.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reset_BillBtn.ForeColor = System.Drawing.Color.White;
+            this.Reset_BillBtn.IconLeft = null;
+            this.Reset_BillBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Reset_BillBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.Reset_BillBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.Reset_BillBtn.IconMarginLeft = 11;
+            this.Reset_BillBtn.IconPadding = 10;
+            this.Reset_BillBtn.IconRight = null;
+            this.Reset_BillBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Reset_BillBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.Reset_BillBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.Reset_BillBtn.IconSize = 25;
+            this.Reset_BillBtn.IdleBorderColor = System.Drawing.Color.Empty;
+            this.Reset_BillBtn.IdleBorderRadius = 0;
+            this.Reset_BillBtn.IdleBorderThickness = 0;
+            this.Reset_BillBtn.IdleFillColor = System.Drawing.Color.Empty;
+            this.Reset_BillBtn.IdleIconLeftImage = null;
+            this.Reset_BillBtn.IdleIconRightImage = null;
+            this.Reset_BillBtn.IndicateFocus = false;
+            this.Reset_BillBtn.Location = new System.Drawing.Point(781, 21);
+            this.Reset_BillBtn.Name = "Reset_BillBtn";
+            this.Reset_BillBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.Reset_BillBtn.OnDisabledState.BorderRadius = 1;
+            this.Reset_BillBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.Reset_BillBtn.OnDisabledState.BorderThickness = 1;
+            this.Reset_BillBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Reset_BillBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.Reset_BillBtn.OnDisabledState.IconLeftImage = null;
+            this.Reset_BillBtn.OnDisabledState.IconRightImage = null;
+            this.Reset_BillBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.Reset_BillBtn.onHoverState.BorderRadius = 1;
+            this.Reset_BillBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.Reset_BillBtn.onHoverState.BorderThickness = 1;
+            this.Reset_BillBtn.onHoverState.FillColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Reset_BillBtn.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.Reset_BillBtn.onHoverState.IconLeftImage = null;
+            this.Reset_BillBtn.onHoverState.IconRightImage = null;
+            this.Reset_BillBtn.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.Reset_BillBtn.OnIdleState.BorderRadius = 1;
+            this.Reset_BillBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.Reset_BillBtn.OnIdleState.BorderThickness = 1;
+            this.Reset_BillBtn.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.Reset_BillBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.Reset_BillBtn.OnIdleState.IconLeftImage = null;
+            this.Reset_BillBtn.OnIdleState.IconRightImage = null;
+            this.Reset_BillBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.Reset_BillBtn.OnPressedState.BorderRadius = 1;
+            this.Reset_BillBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.Reset_BillBtn.OnPressedState.BorderThickness = 1;
+            this.Reset_BillBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.Reset_BillBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.Reset_BillBtn.OnPressedState.IconLeftImage = null;
+            this.Reset_BillBtn.OnPressedState.IconRightImage = null;
+            this.Reset_BillBtn.Size = new System.Drawing.Size(150, 39);
+            this.Reset_BillBtn.TabIndex = 0;
+            this.Reset_BillBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Reset_BillBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Reset_BillBtn.TextMarginLeft = 0;
+            this.Reset_BillBtn.TextPadding = new System.Windows.Forms.Padding(0);
+            this.Reset_BillBtn.UseDefaultRadiusAndThickness = true;
+            this.Reset_BillBtn.Click += new System.EventHandler(this.Reset_BillBtn_Click);
             // 
             // tabControl1
             // 
@@ -1317,6 +1346,7 @@
             this.lvData.TabIndex = 15;
             this.lvData.UseCompatibleStateImageBehavior = false;
             this.lvData.View = System.Windows.Forms.View.Details;
+            this.lvData.SelectedIndexChanged += new System.EventHandler(this.lvData_SelectedIndexChanged);
             // 
             // room
             // 
@@ -1382,6 +1412,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lbAdd);
             this.tabPage2.Controls.Add(this.lbMoney);
             this.tabPage2.Controls.Add(this.bunifuCustomLabel6);
             this.tabPage2.Controls.Add(this.tbMoney);
@@ -1421,6 +1452,7 @@
             this.tbMoney.Name = "tbMoney";
             this.tbMoney.Size = new System.Drawing.Size(150, 22);
             this.tbMoney.TabIndex = 11;
+            this.tbMoney.TextChanged += new System.EventHandler(this.tbMoney_TextChanged);
             // 
             // AddBtn
             // 
@@ -1471,7 +1503,7 @@
             this.AddBtn.IdleIconLeftImage = null;
             this.AddBtn.IdleIconRightImage = null;
             this.AddBtn.IndicateFocus = false;
-            this.AddBtn.Location = new System.Drawing.Point(617, 243);
+            this.AddBtn.Location = new System.Drawing.Point(617, 215);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.AddBtn.OnDisabledState.BorderRadius = 1;
@@ -1512,6 +1544,7 @@
             this.AddBtn.TextMarginLeft = 0;
             this.AddBtn.TextPadding = new System.Windows.Forms.Padding(0);
             this.AddBtn.UseDefaultRadiusAndThickness = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // lvDebit
             // 
@@ -1539,25 +1572,33 @@
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader2.Width = 249;
             // 
-            // lbElec
+            // lbCharge
             // 
-            this.lbElec.AutoSize = true;
-            this.lbElec.ForeColor = System.Drawing.Color.Red;
-            this.lbElec.Location = new System.Drawing.Point(366, 28);
-            this.lbElec.Name = "lbElec";
-            this.lbElec.Size = new System.Drawing.Size(12, 16);
-            this.lbElec.TabIndex = 18;
-            this.lbElec.Text = "*";
+            this.lbCharge.AutoSize = true;
+            this.lbCharge.ForeColor = System.Drawing.Color.Red;
+            this.lbCharge.Location = new System.Drawing.Point(552, 70);
+            this.lbCharge.Name = "lbCharge";
+            this.lbCharge.Size = new System.Drawing.Size(0, 16);
+            this.lbCharge.TabIndex = 20;
             // 
-            // lbwater
+            // lbReset
             // 
-            this.lbwater.AutoSize = true;
-            this.lbwater.ForeColor = System.Drawing.Color.Red;
-            this.lbwater.Location = new System.Drawing.Point(366, 70);
-            this.lbwater.Name = "lbwater";
-            this.lbwater.Size = new System.Drawing.Size(12, 16);
-            this.lbwater.TabIndex = 19;
-            this.lbwater.Text = "*";
+            this.lbReset.AutoSize = true;
+            this.lbReset.ForeColor = System.Drawing.Color.Red;
+            this.lbReset.Location = new System.Drawing.Point(778, 70);
+            this.lbReset.Name = "lbReset";
+            this.lbReset.Size = new System.Drawing.Size(0, 16);
+            this.lbReset.TabIndex = 21;
+            // 
+            // lbAdd
+            // 
+            this.lbAdd.AutoSize = true;
+            this.lbAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAdd.ForeColor = System.Drawing.Color.Red;
+            this.lbAdd.Location = new System.Drawing.Point(614, 263);
+            this.lbAdd.Name = "lbAdd";
+            this.lbAdd.Size = new System.Drawing.Size(0, 15);
+            this.lbAdd.TabIndex = 17;
             // 
             // Payment_Lessor
             // 
@@ -1609,7 +1650,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton Charge_btn;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton Send_BillBtn;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton Reset_BillBtn;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton LogOut_btn;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton Services_btn;
         private System.Windows.Forms.TextBox tbElec;
@@ -1640,5 +1681,8 @@
         private System.Windows.Forms.Label lbMoney;
         private System.Windows.Forms.Label lbwater;
         private System.Windows.Forms.Label lbElec;
+        private System.Windows.Forms.Label lbCharge;
+        private System.Windows.Forms.Label lbReset;
+        private System.Windows.Forms.Label lbAdd;
     }
 }
