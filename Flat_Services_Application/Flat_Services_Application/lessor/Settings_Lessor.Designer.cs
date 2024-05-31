@@ -82,6 +82,9 @@
             this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.Email_tb = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbNoti = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -863,6 +866,9 @@
             this.bunifuPanel3.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel3.BorderRadius = 3;
             this.bunifuPanel3.BorderThickness = 1;
+            this.bunifuPanel3.Controls.Add(this.lbNoti);
+            this.bunifuPanel3.Controls.Add(this.lbEmail);
+            this.bunifuPanel3.Controls.Add(this.lbName);
             this.bunifuPanel3.Controls.Add(this.SaveBtn);
             this.bunifuPanel3.Controls.Add(this.ChangeBtn);
             this.bunifuPanel3.Controls.Add(this.bunifuLabel2);
@@ -1341,6 +1347,7 @@
             this.Name_tb.TextPlaceholder = "Name";
             this.Name_tb.UseSystemPasswordChar = false;
             this.Name_tb.WordWrap = true;
+            this.Name_tb.TextChanged += new System.EventHandler(this.Name_tb_TextChanged);
             // 
             // ID_tb
             // 
@@ -1526,6 +1533,37 @@
             this.Email_tb.TextPlaceholder = "Email";
             this.Email_tb.UseSystemPasswordChar = false;
             this.Email_tb.WordWrap = true;
+            this.Email_tb.TextChanged += new System.EventHandler(this.Email_tb_TextChanged);
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.ForeColor = System.Drawing.Color.Red;
+            this.lbName.Location = new System.Drawing.Point(760, 224);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(12, 16);
+            this.lbName.TabIndex = 30;
+            this.lbName.Text = "*";
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.ForeColor = System.Drawing.Color.Red;
+            this.lbEmail.Location = new System.Drawing.Point(760, 298);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(12, 16);
+            this.lbEmail.TabIndex = 31;
+            this.lbEmail.Text = "*";
+            // 
+            // lbNoti
+            // 
+            this.lbNoti.AutoSize = true;
+            this.lbNoti.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNoti.ForeColor = System.Drawing.Color.Red;
+            this.lbNoti.Location = new System.Drawing.Point(9, 11);
+            this.lbNoti.Name = "lbNoti";
+            this.lbNoti.Size = new System.Drawing.Size(0, 22);
+            this.lbNoti.TabIndex = 32;
             // 
             // Settings_Lessor
             // 
@@ -1579,5 +1617,8 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton Services_btn;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton SaveBtn;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton ChangeBtn;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label lbNoti;
     }
 }

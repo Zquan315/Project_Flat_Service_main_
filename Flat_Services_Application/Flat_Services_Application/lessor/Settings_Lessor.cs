@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -134,12 +135,100 @@ namespace Flat_Services_Application.lessor
         {
             this.Hide();
             ChangePass c = new ChangePass(sdt);
+            c.StartPosition = FormStartPosition.CenterScreen;
             c.Show();
+
+
         }
 
-        private void SaveBtn_Click(object sender, EventArgs e)
+        private async void SaveBtn_Click(object sender, EventArgs e)
         {
+            if (Name_tb.Text == "")
+            {
+                lbName.Text = "*";
+                lbName.ForeColor = Color.Red;
+                return;
+            }
+            else
+            {
+                lbName.Text = "";
+            }
 
+            if (Email_tb.Text == "" || !IsEmail(Email_tb.Text))
+            {
+                lbEmail.Text = "*";
+                lbEmail.ForeColor = Color.Red;
+                return;
+            }
+            else
+            {
+                lbEmail.Text = "";
+            }
+
+            // Cap nhat lai user
+            FirebaseResponse respond = await client.GetAsync("Account Lessor/" + sdt);
+            if (respond.Body != "null")
+            {
+                Data dt = respond.ResultAs<Data>();
+                var data = new Data()
+                {
+                    name = Name_tb.Text,
+                    email = Email_tb.Text,
+                    pass = dt.pass,
+                    phone = dt.phone,
+                    ID = dt.ID,
+                    date = dt.date,
+                    objects = dt.objects,
+                    status = dt.status,
+                    remember = dt.remember,
+                    room = dt.room,
+                };
+                FirebaseResponse ud = await client.UpdateAsync("Account Lessor/" + sdt, data);
+                Data result = ud.ResultAs<Data>();
+
+                lbNoti.Text = "Save successfully";
+                lbNoti.ForeColor = Color.Green;
+                await Task.Delay(3000);
+                lbNoti.Text = "";
+            }
+        }
+        public bool IsEmail(string email)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(email);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
+        private void Name_tb_TextChanged(object sender, EventArgs e)
+        {
+            if (Name_tb.Text == "")
+            {
+                lbName.Text = "*";
+                lbName.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbName.Text = "";
+            }
+        }
+
+        private void Email_tb_TextChanged(object sender, EventArgs e)
+        {
+            if (Email_tb.Text == "" || !IsEmail(Email_tb.Text))
+            {
+                lbEmail.Text = "*";
+                lbEmail.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbEmail.Text = "";
+            }
         }
     }
 }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using Google.Type;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +16,12 @@ namespace Flat_Services_Application
 {
     public partial class ChangePass : Form
     {
+        IFirebaseConfig config = new FirebaseConfig
+        {
+            AuthSecret = "KR5gPtgHXbYV0t9jMOeKDN3UvRaXulbgAD4aijeN",
+            BasePath = "https://account-ac0cc-default-rtdb.firebaseio.com/"
+        };
+        IFirebaseClient client;
         public ChangePass()
         {
             InitializeComponent();
@@ -22,27 +32,88 @@ namespace Flat_Services_Application
             InitializeComponent();
             this.sdt = sdt; 
         }
-        private void btnConfirm_Click(object sender, EventArgs e)
+        private async void btnConfirm_Click(object sender, EventArgs e)
         {
-            // dieu kien xet day phai la mat khau hien tai hay k -> kiem tra trong database, truy xuat bnag hien thi std
-            
-            if(!IsPass(tbNewPass.Text))
+            string s = "";
+
+            FirebaseResponse Response = await client.GetAsync("Account Lessor/" + sdt);
+            if (Response.Body != "null")
             {
-                lb2.Text = "!";
-                lb2.ForeColor = Color.Red;
+                Data dt = Response.ResultAs<Data>();
+                s = dt.pass;
+            }
+
+            // dieu kien xet day phai la mat khau hien tai hay k -> kiem tra trong database, truy xuat bnag hien thi std
+            if (tbCurrPass.Text == "" || !IsPass(tbCurrPass.Text))
+            {
+                lb1.Text = "!";
+                lb1.ForeColor = System.Drawing.Color.Red;
                 return;
             }
+            else
+            {
+                if(tbCurrPass.Text != s)
+                {
+                    lb1.Text = "!";
+                    lb1.ForeColor = System.Drawing.Color.Red;
+                    return;
+                }
+                else
+                {
+                    lb1.Text = "";
+                }
+            }
+
+            if(!IsPass(tbNewPass.Text) || tbNewPass.Text == "")
+            {
+                lb2.Text = "!";
+                lb2.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+            else
+            {
+                lb2.Text = "";
+            }
+
             if(tbConfirmNew.Text != tbNewPass.Text)
             {
                 lb3.Text = "!";
-                lb3.ForeColor = Color.Red;
+                lb3.ForeColor = System.Drawing.Color.Red;
                 return;
             }
+            else
+            {
+                lb3.Text = "";
+            }
+
+            FirebaseResponse respond = await client.GetAsync("Account Lessor/" + sdt);
+            if (respond.Body != "null")
+            {
+                Data dt = respond.ResultAs<Data>();
+                var data = new Data()
+                {
+                    name = dt.name,
+                    email = dt.email,
+                    pass = tbNewPass.Text,
+                    phone = dt.phone,
+                    ID = dt.ID,
+                    date = dt.date,
+                    objects = dt.objects,
+                    status = dt.status,
+                    remember = dt.remember,
+                    room = dt.room,
+                };
+                FirebaseResponse ud = await client.UpdateAsync("Account Lessor/" + sdt, data);
+                Data result = ud.ResultAs<Data>();
+            }
+
             MessageBox.Show("Change Password successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //dieu kien de confirm
             this.Hide();
             Login login = new Login();  
             login.Show();
+
+
         }
 
         public bool IsPass(string pass)
@@ -93,7 +164,7 @@ namespace Flat_Services_Application
             if (tbNewPass.Text == "")
             {
                 lb2.Text = "*";
-                lb2.ForeColor = Color.Red;
+                lb2.ForeColor = System.Drawing.Color.Red;
             }
             else
                 lb2.Text = "";
@@ -109,7 +180,7 @@ namespace Flat_Services_Application
             if (tbCurrPass.Text == "")
             {
                 lb1.Text = "*";
-                lb1.ForeColor = Color.Red;
+                lb1.ForeColor = System.Drawing.Color.Red;
             }
             else
                 lb1.Text = "";
@@ -120,7 +191,7 @@ namespace Flat_Services_Application
             if (tbConfirmNew.Text == "")
             {
                 lb3.Text = "*";
-                lb3.ForeColor = Color.Red;
+                lb3.ForeColor = System.Drawing.Color.Red;
             }
             else
                 lb3.Text = "";
@@ -140,6 +211,14 @@ namespace Flat_Services_Application
                     Login l = new Login();
                     l.Show();
                 }
+        }
+
+        private void ChangePass_Load(object sender, EventArgs e)
+        {
+            client = new FireSharp.FirebaseClient(config);
+
+            if (client == null)
+                MessageBox.Show("Connected isn't Successful!");
         }
     }
 }

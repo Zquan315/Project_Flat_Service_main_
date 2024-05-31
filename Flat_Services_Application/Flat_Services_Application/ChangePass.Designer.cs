@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePass));
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -48,8 +49,8 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.btnReturn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.lb3 = new System.Windows.Forms.Label();
             this.lb2 = new System.Windows.Forms.Label();
             this.lb1 = new System.Windows.Forms.Label();
@@ -67,7 +68,6 @@
             this.Hidden3 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.Eye1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.Hidden1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
-            this.btnReturn = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,6 +103,40 @@
             this.bunifuPanel1.Size = new System.Drawing.Size(476, 360);
             this.bunifuPanel1.TabIndex = 0;
             this.bunifuPanel1.Click += new System.EventHandler(this.bunifuPanel1_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.AllowAnimations = true;
+            this.btnReturn.AllowBorderColorChanges = true;
+            this.btnReturn.AllowMouseEffects = true;
+            this.btnReturn.AnimationSpeed = 200;
+            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnReturn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReturn.BackgroundImage")));
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReturn.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReturn.BorderRadius = 1;
+            this.btnReturn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
+            this.btnReturn.BorderThickness = 1;
+            this.btnReturn.ColorContrastOnClick = 30;
+            this.btnReturn.ColorContrastOnHover = 30;
+            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnReturn.CustomizableEdges = borderEdges1;
+            this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnReturn.Image = null;
+            this.btnReturn.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.btnReturn.Location = new System.Drawing.Point(3, 3);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.RoundBorders = false;
+            this.btnReturn.ShowBorders = true;
+            this.btnReturn.Size = new System.Drawing.Size(35, 35);
+            this.btnReturn.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
+            this.btnReturn.TabIndex = 40;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click_1);
             // 
             // lb3
             // 
@@ -704,40 +738,6 @@
             this.Hidden1.TabIndex = 31;
             this.Hidden1.Click += new System.EventHandler(this.Hidden1_Click);
             // 
-            // btnReturn
-            // 
-            this.btnReturn.AllowAnimations = true;
-            this.btnReturn.AllowBorderColorChanges = true;
-            this.btnReturn.AllowMouseEffects = true;
-            this.btnReturn.AnimationSpeed = 200;
-            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
-            this.btnReturn.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnReturn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReturn.BackgroundImage")));
-            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReturn.BorderColor = System.Drawing.Color.Transparent;
-            this.btnReturn.BorderRadius = 1;
-            this.btnReturn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
-            this.btnReturn.BorderThickness = 1;
-            this.btnReturn.ColorContrastOnClick = 30;
-            this.btnReturn.ColorContrastOnHover = 30;
-            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnReturn.CustomizableEdges = borderEdges1;
-            this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReturn.Image = null;
-            this.btnReturn.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.btnReturn.Location = new System.Drawing.Point(3, 3);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.RoundBorders = false;
-            this.btnReturn.ShowBorders = true;
-            this.btnReturn.Size = new System.Drawing.Size(35, 35);
-            this.btnReturn.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Round;
-            this.btnReturn.TabIndex = 40;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click_1);
-            // 
             // ChangePass
             // 
             this.AcceptButton = this.btnConfirm;
@@ -752,6 +752,7 @@
             this.Name = "ChangePass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Flat Service";
+            this.Load += new System.EventHandler(this.ChangePass_Load);
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             this.ResumeLayout(false);
