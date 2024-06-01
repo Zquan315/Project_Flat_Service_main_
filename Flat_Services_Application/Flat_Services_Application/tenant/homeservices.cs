@@ -430,8 +430,7 @@ namespace Flat_Services_Application.tenant
 
         bool IsValidTimeFormat(string time)
         {
-            // Biểu thức chính quy để kiểm tra định dạng thời gian
-            string pattern = @"^(\d{1,2}h(\d{2})?|(\d{1,2}h))$";
+            string pattern = @"^(0[0-9]|1[0-9]|2[0-3]|24 )h([0-5][0-9])?$";
             Regex regex = new Regex(pattern);
 
             return regex.IsMatch(time);

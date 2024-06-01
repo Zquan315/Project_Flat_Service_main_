@@ -7,24 +7,8 @@
       "RelativeMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|solutionrelative:flat_services_application\\tenant\\homeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|q:\\project_laptrinhmang\\project_flat_service_main_\\flat_services_application\\flat_services_application\\tenant\\homeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\flat_services_application\\tenant\\homeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|solutionrelative:flat_services_application\\tenant\\homeservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|q:\\project_laptrinhmang\\project_flat_service_main_\\flat_services_application\\flat_services_application\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|solutionrelative:flat_services_application\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\flat_services_application\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|solutionrelative:flat_services_application\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\flat_services_application\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|solutionrelative:flat_services_application\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\flat_services_application\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|solutionrelative:flat_services_application\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -56,7 +40,7 @@
               "RelativeDocumentMoniker": "Flat_Services_Application\\tenant\\homeservices.cs",
               "ToolTip": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\tenant\\homeservices.cs",
               "RelativeToolTip": "Flat_Services_Application\\tenant\\homeservices.cs",
-              "ViewState": "AQIAAKUBAAAAAAAAAAAewLgBAAAMAAAA",
+              "ViewState": "AQIAAJ4BAAAAAAAAAAAlwLABAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-01T05:10:14.591Z",
               "EditorCaption": ""
@@ -72,53 +56,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-01T05:09:15.69Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ChangePass.cs",
-              "DocumentMoniker": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\ChangePass.cs",
-              "RelativeDocumentMoniker": "Flat_Services_Application\\ChangePass.cs",
-              "ToolTip": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\ChangePass.cs",
-              "RelativeToolTip": "Flat_Services_Application\\ChangePass.cs",
-              "ViewState": "AQIAAL0AAAAAAAAAAAAgwJ4AAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T04:07:08.219Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ChangePass.cs [Design]",
-              "DocumentMoniker": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\ChangePass.cs",
-              "RelativeDocumentMoniker": "Flat_Services_Application\\ChangePass.cs",
-              "ToolTip": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\ChangePass.cs [Design]",
-              "RelativeToolTip": "Flat_Services_Application\\ChangePass.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T04:07:05.2Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Login.cs",
-              "DocumentMoniker": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\Login.cs",
-              "RelativeDocumentMoniker": "Flat_Services_Application\\Login.cs",
-              "ToolTip": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\Login.cs",
-              "RelativeToolTip": "Flat_Services_Application\\Login.cs",
-              "ViewState": "AQIAAHEBAAAAAAAAAAAuwAgBAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T03:56:14.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\Login.cs",
-              "RelativeDocumentMoniker": "Flat_Services_Application\\Login.cs",
-              "ToolTip": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\Login.cs [Design]",
-              "RelativeToolTip": "Flat_Services_Application\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T03:13:17.027Z"
             }
           ]
         }
