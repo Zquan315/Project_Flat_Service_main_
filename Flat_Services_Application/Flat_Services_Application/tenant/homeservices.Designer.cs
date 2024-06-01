@@ -79,6 +79,10 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbTimestart = new System.Windows.Forms.TextBox();
+            this.lb4 = new System.Windows.Forms.Label();
+            this.time_start = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelCenter.SuspendLayout();
             this.panelCenterServices.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -190,6 +194,9 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.lb4);
+            this.panel6.Controls.Add(this.tbTimestart);
+            this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.lbTime);
             this.panel6.Controls.Add(this.lbID);
             this.panel6.Controls.Add(this.DeleteBtn);
@@ -242,6 +249,7 @@
             this.DeleteBtn.TabIndex = 9;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // UpdateBtn
             // 
@@ -255,6 +263,7 @@
             this.UpdateBtn.TabIndex = 8;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // enrollBtn
             // 
@@ -284,7 +293,7 @@
             this.tbTime.Location = new System.Drawing.Point(9, 157);
             this.tbTime.Margin = new System.Windows.Forms.Padding(2);
             this.tbTime.Name = "tbTime";
-            this.tbTime.Size = new System.Drawing.Size(520, 28);
+            this.tbTime.Size = new System.Drawing.Size(181, 28);
             this.tbTime.TabIndex = 5;
             this.tbTime.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -350,7 +359,9 @@
             this.name,
             this.register,
             this.time,
-            this.status});
+            this.status,
+            this.time_start});
+            this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(5, 26);
@@ -359,6 +370,7 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // id
             // 
@@ -631,6 +643,42 @@
             this.panel5.Click += new System.EventHandler(this.panel5_Click);
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(275, 127);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 19);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Time start";
+            // 
+            // tbTimestart
+            // 
+            this.tbTimestart.Location = new System.Drawing.Point(279, 157);
+            this.tbTimestart.Margin = new System.Windows.Forms.Padding(2);
+            this.tbTimestart.Name = "tbTimestart";
+            this.tbTimestart.Size = new System.Drawing.Size(181, 28);
+            this.tbTimestart.TabIndex = 19;
+            this.tbTimestart.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // lb4
+            // 
+            this.lb4.AutoSize = true;
+            this.lb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb4.ForeColor = System.Drawing.Color.Red;
+            this.lb4.Location = new System.Drawing.Point(276, 186);
+            this.lb4.Name = "lb4";
+            this.lb4.Size = new System.Drawing.Size(12, 15);
+            this.lb4.TabIndex = 20;
+            this.lb4.Text = "*";
+            // 
+            // time_start
+            // 
+            this.time_start.Text = "Time start";
+            this.time_start.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.time_start.Width = 90;
+            // 
             // homeservices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -711,5 +759,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Label lb4;
+        private System.Windows.Forms.TextBox tbTimestart;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ColumnHeader time_start;
     }
 }

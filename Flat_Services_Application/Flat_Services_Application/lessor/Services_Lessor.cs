@@ -203,12 +203,13 @@ namespace Flat_Services_Application.lessor
                 string name = selectedItem.SubItems[2].Text;
                 string date = selectedItem.SubItems[3].Text;
                 string time = selectedItem.SubItems[4].Text;
+                string timestart = selectedItem.SubItems[6].Text;
                 //string status = selectedItem.SubItems[5].Text;
 
                 // cap nhat status
-                update_status(room, id, name, date, time);
+                update_status(room, id, name, date, time, timestart);
                 // sen notification
-                send_notification(room, name, date);
+                send_notification(room, name, date, timestart);
 
                 // tinh tien dich vu
                 int total = 0;
@@ -254,7 +255,7 @@ namespace Flat_Services_Application.lessor
             }
         }
 
-        async void update_status(string room, string id, string name, string date, string time)
+        async void update_status(string room, string id, string name, string date, string time, string timestart)
         {
             DocumentReference DOC = db.Collection("ListAwaitService").Document(room);
             Dictionary<string, object> maindt = new Dictionary<string, object>();
@@ -264,6 +265,7 @@ namespace Flat_Services_Application.lessor
             arr.Add(date);
             arr.Add(time);
             arr.Add("browsed");
+            arr.Add(timestart);
             maindt.Add(id, arr);
             await DOC.UpdateAsync(maindt);
 
@@ -273,10 +275,10 @@ namespace Flat_Services_Application.lessor
             noti_label.Text = "";
         }
 
-        async void send_notification(string room, string name, string date)
+        async void send_notification(string room, string name, string date, string timestart)
         {
             DocumentReference dr = db.Collection("Notification").Document(room);
-            await dr.UpdateAsync("notification", FieldValue.ArrayUnion("Room " + room + " is browsed to use " + name + " on " + date));
+            await dr.UpdateAsync("notification", FieldValue.ArrayUnion("Room " + room + " is browsed to use " + name + " on " + timestart +", " + date));
 
            
         }

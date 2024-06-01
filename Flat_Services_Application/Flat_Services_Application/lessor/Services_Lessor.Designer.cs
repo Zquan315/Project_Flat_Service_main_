@@ -75,6 +75,7 @@
             this.res = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -1257,7 +1258,8 @@
             this.name_,
             this.res,
             this.time,
-            this.status});
+            this.status,
+            this.columnHeader1});
             this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView2.FullRowSelect = true;
             this.listView2.GridLines = true;
@@ -1302,7 +1304,12 @@
             // 
             this.status.Text = "Status";
             this.status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.status.Width = 185;
+            this.status.Width = 110;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Time start";
+            this.columnHeader1.Width = 90;
             // 
             // Services_Lessor
             // 
@@ -1369,5 +1376,6 @@
         private System.Windows.Forms.ColumnHeader status;
         private System.Windows.Forms.ColumnHeader note;
         private Bunifu.UI.WinForms.BunifuLabel noti_label;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

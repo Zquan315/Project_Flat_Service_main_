@@ -1,4 +1,5 @@
-﻿using Flat_Services_Application.Class;
+﻿using FireSharp.Response;
+using Flat_Services_Application.Class;
 using Google.Cloud.Firestore;
 using System;
 using System.Collections;
@@ -10,6 +11,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Google.Rpc.Context.AttributeContext.Types;
@@ -233,6 +235,14 @@ namespace Flat_Services_Application.tenant
             else
                 lbTime.Text = "";
 
+            if (tbTimestart.Text == "" || !IsValidTimeFormat(tbTimestart.Text))
+            {
+                lb4.Text = "*";
+                lb4.ForeColor = Color.Red;
+                return;
+            }
+            else
+                lb4.Text = "";
             // dang ki service
             add_data_listAwaitService();
             lbID.Text = "Enroll successfully";
@@ -255,6 +265,7 @@ namespace Flat_Services_Application.tenant
             arr.Add(formattedDate);
             arr.Add(tbTime.Text);
             arr.Add("wait");
+            arr.Add(tbTimestart.Text);
             maindt.Add(tbID.Text.ToUpper(), arr);
             if(snapshot != null) 
                 await DOC.UpdateAsync(maindt);
@@ -311,7 +322,129 @@ namespace Flat_Services_Application.tenant
                 lbID.ForeColor = Color.Red;
             }
             else
+            {
                 lbID.Text = "";
+                if(exits_enroll(tbID.Text.ToUpper()))
+                {
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        if (item.Text == tbID.Text.ToUpper() )
+                        {
+                            DateTime dateTime = DateTime.ParseExact(item.SubItems[2].Text, "MM/dd/yyyy", null);
+                            datetime.Value = dateTime;
+                            tbTime.Text = item.SubItems[3].Text;
+                            tbTimestart.Text = item.SubItems[5].Text;
+                            return;
+                        }
+                            
+                    }
+                }
+            }    
+               
+        }
+
+       
+        private async void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (tbID.Text == "" || !exits_enroll(tbID.Text.ToUpper()))
+            {
+                lbID.Text = "This serrvice haven't been enrolled";
+                lbID.ForeColor = Color.Red;
+                return;
+            }
+            else
+                lbID.Text = "";
+            int num = 0;
+            if (tbTime.Text == "" || !int.TryParse(tbTime.Text.Trim(), out num) || Convert.ToInt32(tbTime.Text) > 24 || Convert.ToInt32(tbTime.Text) <= 0)
+            {
+
+                lbTime.Text = "invalid";
+                lbTime.ForeColor = Color.Red;
+                return;
+            }
+            else
+                lbTime.Text = "";
+            if (tbTimestart.Text == "" || !IsValidTimeFormat(tbTimestart.Text))
+            {
+                lb4.Text = "*";
+                lb4.ForeColor = Color.Red;
+                return;
+            }
+            else
+                lb4.Text = "";
+            // cap nhat service
+            update_enroll();
+            lbID.Text = "Update successfully";
+            lbID.ForeColor = Color.Green;
+            await Task.Delay(3000);
+            reset();
+        }
+
+        async void update_enroll()
+        {
+            DocumentReference DOC = db.Collection("ListAwaitService").Document(tbroom.Text);
+            DocumentSnapshot snapshot = await DOC.GetSnapshotAsync();
+            Dictionary<string, object> maindt = new Dictionary<string, object>();
+
+            DateTime selectedDate = datetime.Value;
+            string formattedDate = selectedDate.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+            ArrayList arr = new ArrayList();
+            arr.Add(nameService(tbID.Text.ToUpper()));// them ten 
+            arr.Add(formattedDate);
+            arr.Add(tbTime.Text);          
+            arr.Add("wait");
+            arr.Add(tbTimestart.Text);
+            maindt.Add(tbID.Text.ToUpper(), arr);
+            if (snapshot != null)
+                await DOC.UpdateAsync(maindt);
+            else
+                await DOC.SetAsync(maindt);
+        }
+        private async void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select at least one object", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            while (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                string id = selectedItem.SubItems[0].Text;
+                DocumentReference docRef = db.Collection("ListAwaitService").Document(tbroom.Text);
+                Dictionary<string, object> updates = new Dictionary<string, object>
+                    {
+                        { id, FieldValue.Delete }
+                    };
+
+                await docRef.UpdateAsync(updates);
+                listView1.Items.RemoveAt(listView1.SelectedItems[0].Index);
+            }
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        bool IsValidTimeFormat(string time)
+        {
+            // Biểu thức chính quy để kiểm tra định dạng thời gian
+            string pattern = @"^(\d{1,2}h(\d{2})?|(\d{1,2}h))$";
+            Regex regex = new Regex(pattern);
+
+            return regex.IsMatch(time);
+        }
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            if (tbTimestart.Text == "" || !IsValidTimeFormat(tbTimestart.Text))
+            {
+                lb4.Text = "*";
+                lb4.ForeColor = Color.Red;
+            }
+            else
+                lb4.Text = "";
         }
     }
 }
