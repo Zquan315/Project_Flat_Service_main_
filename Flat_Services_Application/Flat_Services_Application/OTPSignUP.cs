@@ -79,7 +79,7 @@ namespace Flat_Services_Application
                 {
                     name = this.name,
                     email = this.email,
-                    pass = this.pass,
+                    pass = Encode(this.pass,3),
                     phone = this.sdt,
                     ID = this.id,
                     date = this.date,
@@ -126,6 +126,48 @@ namespace Flat_Services_Application
             }
         }
 
+        public static string Encode(string input, int shift)
+        {
+            char[] buffer = input.ToCharArray();
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                char letter = buffer[i];
+                if (char.IsLetter(letter))
+                {
+                    char letterOffset = char.IsUpper(letter) ? 'A' : 'a';
+                    letter = (char)((letter + shift - letterOffset) % 26 + letterOffset);
+                }
+                else if (char.IsDigit(letter))
+                {
+                    char digitOffset = '0';
+                    letter = (char)((letter + shift - digitOffset) % 10 + digitOffset);
+                }
+                buffer[i] = letter;
+            }
+            return new string(buffer);
+        }
+
+        private void tbOTP_TextChanged_1(object sender, EventArgs e)
+        {
+            if (tbOTP.Text == "")
+            {
+                lb2.Text = "*";
+                lb2.ForeColor = Color.Red;
+            }
+            else
+                lb2.Text = "";
+        }
+
+        private void lb2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public static string Decode(string input, int shift)
+        {
+            // Decoding is simply encoding with the negative shift
+            return Encode(input, -shift);
+        }
         private void GetBtn_Click(object sender, EventArgs e)
         {
             try

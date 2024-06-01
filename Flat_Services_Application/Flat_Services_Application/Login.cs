@@ -117,7 +117,33 @@ namespace Flat_Services_Application
                 return false;
             return true;
         }
-        
+
+        public static string Encode(string input, int shift)
+        {
+            char[] buffer = input.ToCharArray();
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                char letter = buffer[i];
+                if (char.IsLetter(letter))
+                {
+                    char letterOffset = char.IsUpper(letter) ? 'A' : 'a';
+                    letter = (char)((letter + shift - letterOffset) % 26 + letterOffset);
+                }
+                else if (char.IsDigit(letter))
+                {
+                    char digitOffset = '0';
+                    letter = (char)((letter + shift - digitOffset) % 10 + digitOffset);
+                }
+                buffer[i] = letter;
+            }
+            return new string(buffer);
+        }
+
+        public static string Decode(string input, int shift)
+        {
+            // Decoding is simply encoding with the negative shift
+            return Encode(input, -shift);
+        }
         private async void btnLogin_Click(object sender, EventArgs e)
         {
             if (!rdbtnLessor.Checked && !rdbtnTenant.Checked)
@@ -158,7 +184,7 @@ namespace Flat_Services_Application
                 Data dt = Response.ResultAs<Data>();
 
 
-                if (tbPass.Text != dt.pass)
+                if (tbPass.Text != Decode(dt.pass,3))
                 {
                     lbps2.Text = "Wrong";
                     lbps2.ForeColor = Color.Red;
@@ -224,7 +250,7 @@ namespace Flat_Services_Application
 
 
 
-                if (tbPass.Text != obj.pass)
+                if (tbPass.Text != Decode(obj.pass,3))
                 {
                     lbps2.Text = "Wrong";
                     lbps2.ForeColor = Color.Red;
@@ -352,7 +378,7 @@ namespace Flat_Services_Application
                         Data obj = Response.ResultAs<Data>();
                         if (obj.remember == 1)
                         {
-                            tbPass.Text = obj.pass;
+                            tbPass.Text = Decode(obj.pass, 3);
                         }
                     }
 
@@ -367,7 +393,7 @@ namespace Flat_Services_Application
                         Data obj = Response.ResultAs<Data>();
                         if (obj.remember == 1)
                         {
-                            tbPass.Text = obj.pass;
+                            tbPass.Text = Decode(obj.pass, 3);
                             //hello
                         }
                     }

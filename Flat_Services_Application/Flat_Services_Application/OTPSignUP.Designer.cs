@@ -110,6 +110,7 @@
             this.lb2.Size = new System.Drawing.Size(12, 15);
             this.lb2.TabIndex = 37;
             this.lb2.Text = "*";
+            this.lb2.Click += new System.EventHandler(this.lb2_Click);
             // 
             // btnConfirm
             // 
@@ -278,6 +279,7 @@
             this.tbOTP.TextPlaceholder = "OTP";
             this.tbOTP.UseSystemPasswordChar = false;
             this.tbOTP.WordWrap = true;
+            this.tbOTP.TextChanged += new System.EventHandler(this.tbOTP_TextChanged_1);
             // 
             // tbMail
             // 
