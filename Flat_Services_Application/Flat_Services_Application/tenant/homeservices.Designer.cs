@@ -40,6 +40,9 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lb4 = new System.Windows.Forms.Label();
+            this.tbTimestart = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.DeleteBtn = new System.Windows.Forms.Button();
@@ -58,6 +61,7 @@
             this.register = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.time_start = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -79,10 +83,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbTimestart = new System.Windows.Forms.TextBox();
-            this.lb4 = new System.Windows.Forms.Label();
-            this.time_start = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label7 = new System.Windows.Forms.Label();
             this.panelCenter.SuspendLayout();
             this.panelCenterServices.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -194,6 +195,7 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.lb4);
             this.panel6.Controls.Add(this.tbTimestart);
             this.panel6.Controls.Add(this.label6);
@@ -214,6 +216,36 @@
             this.panel6.Size = new System.Drawing.Size(557, 264);
             this.panel6.TabIndex = 0;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // lb4
+            // 
+            this.lb4.AutoSize = true;
+            this.lb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb4.ForeColor = System.Drawing.Color.Red;
+            this.lb4.Location = new System.Drawing.Point(465, 163);
+            this.lb4.Name = "lb4";
+            this.lb4.Size = new System.Drawing.Size(12, 15);
+            this.lb4.TabIndex = 20;
+            this.lb4.Text = "*";
+            // 
+            // tbTimestart
+            // 
+            this.tbTimestart.Location = new System.Drawing.Point(279, 157);
+            this.tbTimestart.Margin = new System.Windows.Forms.Padding(2);
+            this.tbTimestart.Name = "tbTimestart";
+            this.tbTimestart.Size = new System.Drawing.Size(181, 28);
+            this.tbTimestart.TabIndex = 19;
+            this.tbTimestart.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(275, 127);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 19);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Time start";
             // 
             // lbTime
             // 
@@ -396,6 +428,12 @@
             // 
             this.status.Text = "Status";
             this.status.Width = 140;
+            // 
+            // time_start
+            // 
+            this.time_start.Text = "Time start";
+            this.time_start.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.time_start.Width = 90;
             // 
             // panel2
             // 
@@ -643,41 +681,16 @@
             this.panel5.Click += new System.EventHandler(this.panel5_Click);
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // label6
+            // label7
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(275, 127);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 19);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Time start";
-            // 
-            // tbTimestart
-            // 
-            this.tbTimestart.Location = new System.Drawing.Point(279, 157);
-            this.tbTimestart.Margin = new System.Windows.Forms.Padding(2);
-            this.tbTimestart.Name = "tbTimestart";
-            this.tbTimestart.Size = new System.Drawing.Size(181, 28);
-            this.tbTimestart.TabIndex = 19;
-            this.tbTimestart.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
-            // lb4
-            // 
-            this.lb4.AutoSize = true;
-            this.lb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb4.ForeColor = System.Drawing.Color.Red;
-            this.lb4.Location = new System.Drawing.Point(276, 186);
-            this.lb4.Name = "lb4";
-            this.lb4.Size = new System.Drawing.Size(12, 15);
-            this.lb4.TabIndex = 20;
-            this.lb4.Text = "*";
-            // 
-            // time_start
-            // 
-            this.time_start.Text = "Time start";
-            this.time_start.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.time_start.Width = 90;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(276, 189);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 15);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Ex: 9h/ 9h00";
             // 
             // homeservices
             // 
@@ -763,5 +776,6 @@
         private System.Windows.Forms.TextBox tbTimestart;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ColumnHeader time_start;
+        private System.Windows.Forms.Label label7;
     }
 }
