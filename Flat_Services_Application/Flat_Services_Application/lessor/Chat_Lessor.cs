@@ -231,6 +231,7 @@ namespace Flat_Services_Application.lessor
         private void DelBtn_Click(object sender, EventArgs e)
         {
             tbChat.Text = "";
+            lvSearch.Items.Clear();
         }
 
         private void SendBtn_Click(object sender, EventArgs e)
