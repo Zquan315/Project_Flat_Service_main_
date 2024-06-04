@@ -206,5 +206,10 @@ namespace Flat_Services_Application.tenant
             await docRef.UpdateAsync(updates);
             listView1.Items.Clear();
         }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -95,9 +95,10 @@
             this.panelCenterCosts.BackColor = System.Drawing.Color.White;
             this.panelCenterCosts.Controls.Add(this.groupBox2);
             this.panelCenterCosts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCenterCosts.Location = new System.Drawing.Point(360, 159);
+            this.panelCenterCosts.Location = new System.Drawing.Point(240, 102);
+            this.panelCenterCosts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelCenterCosts.Name = "panelCenterCosts";
-            this.panelCenterCosts.Size = new System.Drawing.Size(1414, 871);
+            this.panelCenterCosts.Size = new System.Drawing.Size(943, 557);
             this.panelCenterCosts.TabIndex = 9;
             // 
             // groupBox2
@@ -112,9 +113,11 @@
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(15, 30);
+            this.groupBox2.Location = new System.Drawing.Point(10, 19);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1388, 812);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(925, 520);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Payment Banking";
@@ -123,17 +126,19 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(938, 66);
+            this.label6.Location = new System.Drawing.Point(625, 42);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 32);
+            this.label6.Size = new System.Drawing.Size(82, 19);
             this.label6.TabIndex = 18;
             this.label6.Text = "QR code";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(944, 116);
+            this.pictureBox1.Location = new System.Drawing.Point(629, 74);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(416, 444);
+            this.pictureBox1.Size = new System.Drawing.Size(277, 284);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
@@ -141,9 +146,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 59);
+            this.label2.Location = new System.Drawing.Point(18, 38);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 32);
+            this.label2.Size = new System.Drawing.Size(108, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Total Money";
             // 
@@ -151,10 +157,11 @@
             // 
             this.txbTotalMoney.Enabled = false;
             this.txbTotalMoney.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTotalMoney.Location = new System.Drawing.Point(240, 50);
+            this.txbTotalMoney.Location = new System.Drawing.Point(160, 32);
+            this.txbTotalMoney.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbTotalMoney.Multiline = true;
             this.txbTotalMoney.Name = "txbTotalMoney";
-            this.txbTotalMoney.Size = new System.Drawing.Size(457, 48);
+            this.txbTotalMoney.Size = new System.Drawing.Size(306, 32);
             this.txbTotalMoney.TabIndex = 2;
             // 
             // listView1
@@ -174,10 +181,9 @@
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 594);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listView1.Location = new System.Drawing.Point(8, 380);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1346, 142);
+            this.listView1.Size = new System.Drawing.Size(899, 92);
             this.listView1.TabIndex = 15;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -249,9 +255,10 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(6, 769);
+            this.label10.Location = new System.Drawing.Point(4, 492);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(368, 33);
+            this.label10.Size = new System.Drawing.Size(232, 21);
             this.label10.TabIndex = 11;
             this.label10.Text = "Dated: 1st-5th every month";
             // 
@@ -268,9 +275,11 @@
             this.groupBox1.Controls.Add(this.qrCreateBtn);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(33, 123);
+            this.groupBox1.Location = new System.Drawing.Point(22, 79);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(886, 438);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(591, 280);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Information";
@@ -280,10 +289,11 @@
             // 
             this.txbBank.Enabled = false;
             this.txbBank.Font = new System.Drawing.Font("Century", 9F);
-            this.txbBank.Location = new System.Drawing.Point(285, 48);
+            this.txbBank.Location = new System.Drawing.Point(190, 31);
+            this.txbBank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbBank.Multiline = true;
             this.txbBank.Name = "txbBank";
-            this.txbBank.Size = new System.Drawing.Size(360, 46);
+            this.txbBank.Size = new System.Drawing.Size(241, 31);
             this.txbBank.TabIndex = 20;
             // 
             // cb_AccountNumber
@@ -294,9 +304,10 @@
             "711068211500001",
             "101876590002",
             "1031968480"});
-            this.cb_AccountNumber.Location = new System.Drawing.Point(285, 116);
+            this.cb_AccountNumber.Location = new System.Drawing.Point(190, 74);
+            this.cb_AccountNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cb_AccountNumber.Name = "cb_AccountNumber";
-            this.cb_AccountNumber.Size = new System.Drawing.Size(360, 46);
+            this.cb_AccountNumber.Size = new System.Drawing.Size(241, 31);
             this.cb_AccountNumber.TabIndex = 18;
             this.cb_AccountNumber.SelectedIndexChanged += new System.EventHandler(this.cb_AccountNumber_SelectedIndexChanged);
             // 
@@ -304,9 +315,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(6, 216);
+            this.label5.Location = new System.Drawing.Point(4, 138);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 38);
+            this.label5.Size = new System.Drawing.Size(94, 23);
             this.label5.TabIndex = 14;
             this.label5.Text = "Account";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -315,19 +327,21 @@
             // 
             this.txbAccount.Enabled = false;
             this.txbAccount.Font = new System.Drawing.Font("Century", 9F);
-            this.txbAccount.Location = new System.Drawing.Point(285, 208);
+            this.txbAccount.Location = new System.Drawing.Point(190, 133);
+            this.txbAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbAccount.Multiline = true;
             this.txbAccount.Name = "txbAccount";
-            this.txbAccount.Size = new System.Drawing.Size(360, 46);
+            this.txbAccount.Size = new System.Drawing.Size(241, 31);
             this.txbAccount.TabIndex = 11;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(6, 116);
+            this.label4.Location = new System.Drawing.Point(4, 74);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(282, 38);
+            this.label4.Size = new System.Drawing.Size(178, 23);
             this.label4.TabIndex = 10;
             this.label4.Text = "Account Number";
             // 
@@ -335,9 +349,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(6, 56);
+            this.label7.Location = new System.Drawing.Point(4, 36);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 38);
+            this.label7.Size = new System.Drawing.Size(59, 23);
             this.label7.TabIndex = 1;
             this.label7.Text = "Bank";
             // 
@@ -345,10 +360,11 @@
             // 
             this.txbContent.Enabled = false;
             this.txbContent.Font = new System.Drawing.Font("Century", 9F);
-            this.txbContent.Location = new System.Drawing.Point(285, 305);
+            this.txbContent.Location = new System.Drawing.Point(190, 195);
+            this.txbContent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbContent.Multiline = true;
             this.txbContent.Name = "txbContent";
-            this.txbContent.Size = new System.Drawing.Size(360, 116);
+            this.txbContent.Size = new System.Drawing.Size(241, 76);
             this.txbContent.TabIndex = 6;
             this.txbContent.TextChanged += new System.EventHandler(this.txbContent_TextChanged);
             // 
@@ -356,9 +372,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(6, 327);
+            this.label9.Location = new System.Drawing.Point(4, 209);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(140, 38);
+            this.label9.Size = new System.Drawing.Size(88, 23);
             this.label9.TabIndex = 5;
             this.label9.Text = "Content";
             // 
@@ -366,9 +383,10 @@
             // 
             this.qrCreateBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qrCreateBtn.ForeColor = System.Drawing.Color.Black;
-            this.qrCreateBtn.Location = new System.Drawing.Point(664, 45);
+            this.qrCreateBtn.Location = new System.Drawing.Point(443, 29);
+            this.qrCreateBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.qrCreateBtn.Name = "qrCreateBtn";
-            this.qrCreateBtn.Size = new System.Drawing.Size(192, 77);
+            this.qrCreateBtn.Size = new System.Drawing.Size(128, 49);
             this.qrCreateBtn.TabIndex = 7;
             this.qrCreateBtn.Text = "Create QR";
             this.qrCreateBtn.UseVisualStyleBackColor = true;
@@ -378,9 +396,10 @@
             // 
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(664, 155);
+            this.btnDelete.Location = new System.Drawing.Point(443, 99);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(192, 72);
+            this.btnDelete.Size = new System.Drawing.Size(128, 46);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -390,9 +409,10 @@
             // 
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(360, 0);
+            this.panel2.Location = new System.Drawing.Point(240, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1414, 159);
+            this.panel2.Size = new System.Drawing.Size(943, 102);
             this.panel2.TabIndex = 8;
             // 
             // panel4
@@ -403,8 +423,9 @@
             this.panel4.Controls.Add(this.label1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1414, 159);
+            this.panel4.Size = new System.Drawing.Size(943, 102);
             this.panel4.TabIndex = 0;
             // 
             // panel9
@@ -414,9 +435,10 @@
             this.panel9.Controls.Add(this.label15);
             this.panel9.Controls.Add(this.label16);
             this.panel9.Controls.Add(this.tbAccount);
-            this.panel9.Location = new System.Drawing.Point(889, 6);
+            this.panel9.Location = new System.Drawing.Point(593, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(514, 150);
+            this.panel9.Size = new System.Drawing.Size(343, 96);
             this.panel9.TabIndex = 8;
             // 
             // tbroom
@@ -424,9 +446,11 @@
             this.tbroom.CausesValidation = false;
             this.tbroom.Enabled = false;
             this.tbroom.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbroom.Location = new System.Drawing.Point(194, 45);
+            this.tbroom.Location = new System.Drawing.Point(129, 29);
+            this.tbroom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbroom.Multiline = true;
             this.tbroom.Name = "tbroom";
-            this.tbroom.Size = new System.Drawing.Size(234, 36);
+            this.tbroom.Size = new System.Drawing.Size(157, 23);
             this.tbroom.TabIndex = 17;
             // 
             // label14
@@ -434,9 +458,10 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(33, 48);
+            this.label14.Location = new System.Drawing.Point(22, 31);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(95, 33);
+            this.label14.Size = new System.Drawing.Size(60, 21);
             this.label14.TabIndex = 16;
             this.label14.Text = "Room:";
             // 
@@ -445,9 +470,10 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(15, 125);
+            this.label15.Location = new System.Drawing.Point(10, 80);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(496, 25);
+            this.label15.Size = new System.Drawing.Size(331, 17);
             this.label15.TabIndex = 15;
             this.label15.Text = "© 2024 - Copyright by Group 5 NT106.O21.ANTT";
             // 
@@ -456,9 +482,10 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(33, 5);
+            this.label16.Location = new System.Drawing.Point(22, 3);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(118, 33);
+            this.label16.Size = new System.Drawing.Size(74, 21);
             this.label16.TabIndex = 13;
             this.label16.Text = "Account";
             // 
@@ -467,9 +494,11 @@
             this.tbAccount.CausesValidation = false;
             this.tbAccount.Enabled = false;
             this.tbAccount.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAccount.Location = new System.Drawing.Point(194, 8);
+            this.tbAccount.Location = new System.Drawing.Point(129, 5);
+            this.tbAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAccount.Multiline = true;
             this.tbAccount.Name = "tbAccount";
-            this.tbAccount.Size = new System.Drawing.Size(234, 36);
+            this.tbAccount.Size = new System.Drawing.Size(157, 20);
             this.tbAccount.TabIndex = 0;
             // 
             // label12
@@ -477,9 +506,10 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(3, 42);
+            this.label12.Location = new System.Drawing.Point(2, 27);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(247, 70);
+            this.label12.Size = new System.Drawing.Size(158, 44);
             this.label12.TabIndex = 2;
             this.label12.Text = "Costing";
             // 
@@ -488,9 +518,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(6, 42);
+            this.label1.Location = new System.Drawing.Point(4, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 70);
+            this.label1.Size = new System.Drawing.Size(0, 44);
             this.label1.TabIndex = 0;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -507,17 +538,19 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 1030);
+            this.panel1.Size = new System.Drawing.Size(240, 659);
             this.panel1.TabIndex = 7;
             // 
             // button4
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(0, 759);
+            this.button4.Location = new System.Drawing.Point(0, 487);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(360, 125);
+            this.button4.Size = new System.Drawing.Size(240, 80);
             this.button4.TabIndex = 7;
             this.button4.Text = "Setting";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -528,9 +561,10 @@
             // 
             this.logoutBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.logoutBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutBtn.Location = new System.Drawing.Point(0, 892);
+            this.logoutBtn.Location = new System.Drawing.Point(0, 571);
+            this.logoutBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logoutBtn.Name = "logoutBtn";
-            this.logoutBtn.Size = new System.Drawing.Size(360, 138);
+            this.logoutBtn.Size = new System.Drawing.Size(240, 88);
             this.logoutBtn.TabIndex = 6;
             this.logoutBtn.Text = "Log Out";
             this.logoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -541,9 +575,10 @@
             // 
             this.chatBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.chatBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chatBtn.Location = new System.Drawing.Point(0, 639);
+            this.chatBtn.Location = new System.Drawing.Point(0, 410);
+            this.chatBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chatBtn.Name = "chatBtn";
-            this.chatBtn.Size = new System.Drawing.Size(360, 120);
+            this.chatBtn.Size = new System.Drawing.Size(240, 77);
             this.chatBtn.TabIndex = 5;
             this.chatBtn.Text = "Chatting";
             this.chatBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -554,9 +589,10 @@
             // 
             this.servicesBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.servicesBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.servicesBtn.Location = new System.Drawing.Point(0, 519);
+            this.servicesBtn.Location = new System.Drawing.Point(0, 333);
+            this.servicesBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.servicesBtn.Name = "servicesBtn";
-            this.servicesBtn.Size = new System.Drawing.Size(360, 120);
+            this.servicesBtn.Size = new System.Drawing.Size(240, 77);
             this.servicesBtn.TabIndex = 4;
             this.servicesBtn.Text = "Service";
             this.servicesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -566,10 +602,11 @@
             // infoBtn
             // 
             this.infoBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.infoBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoBtn.Location = new System.Drawing.Point(0, 399);
+            this.infoBtn.Font = new System.Drawing.Font("Century", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoBtn.Location = new System.Drawing.Point(0, 256);
+            this.infoBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.infoBtn.Name = "infoBtn";
-            this.infoBtn.Size = new System.Drawing.Size(360, 120);
+            this.infoBtn.Size = new System.Drawing.Size(240, 77);
             this.infoBtn.TabIndex = 3;
             this.infoBtn.Text = "Information";
             this.infoBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -580,11 +617,12 @@
             // 
             this.costsBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.costsBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costsBtn.Location = new System.Drawing.Point(0, 279);
+            this.costsBtn.Location = new System.Drawing.Point(0, 179);
+            this.costsBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.costsBtn.Name = "costsBtn";
-            this.costsBtn.Size = new System.Drawing.Size(360, 120);
+            this.costsBtn.Size = new System.Drawing.Size(240, 77);
             this.costsBtn.TabIndex = 2;
-            this.costsBtn.Text = "Costing Fee";
+            this.costsBtn.Text = "Costing";
             this.costsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.costsBtn.UseVisualStyleBackColor = true;
             this.costsBtn.Click += new System.EventHandler(this.costsBtn_Click);
@@ -594,9 +632,10 @@
             this.homeBtn.BackColor = System.Drawing.Color.White;
             this.homeBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.homeBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeBtn.Location = new System.Drawing.Point(0, 159);
+            this.homeBtn.Location = new System.Drawing.Point(0, 102);
+            this.homeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.homeBtn.Name = "homeBtn";
-            this.homeBtn.Size = new System.Drawing.Size(360, 120);
+            this.homeBtn.Size = new System.Drawing.Size(240, 77);
             this.homeBtn.TabIndex = 1;
             this.homeBtn.Text = "Home";
             this.homeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -609,8 +648,9 @@
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(360, 159);
+            this.panel3.Size = new System.Drawing.Size(240, 102);
             this.panel3.TabIndex = 0;
             // 
             // panel5
@@ -619,20 +659,22 @@
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(360, 159);
+            this.panel5.Size = new System.Drawing.Size(240, 102);
             this.panel5.TabIndex = 1;
             this.panel5.Click += new System.EventHandler(this.panel5_Click);
             // 
             // homecostsing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1774, 1030);
+            this.ClientSize = new System.Drawing.Size(1183, 659);
             this.Controls.Add(this.panelCenterCosts);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "homecostsing";
             this.Text = "Flat Service";
