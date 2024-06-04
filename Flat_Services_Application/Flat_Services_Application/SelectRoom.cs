@@ -76,6 +76,7 @@ namespace Flat_Services_Application
                     if (t.Status == 1)
                     {
                         IDroom[i].Enabled = false;
+                        IDroom[i].Checked = false;
                         IDroom[i].Text = IDroom[i].Text + " - hired";
                     }
                     else
@@ -96,26 +97,43 @@ namespace Flat_Services_Application
         {
             int[] room = { 101, 102, 103, 104, 105, 201, 202, 203, 204, 205, 301, 302, 303, 304, 305 };
             RadioButton[] IDroom = { rdb101, rdb102, rdb103, rdb104, rdb105, rdb201, rdb202, rdb203, rdb204, rdb205, rdb301, rdb302, rdb303, rdb304, rdb305 };
-            try
+            if(check_select(IDroom))
             {
-                if (MessageBox.Show("Are you sure select this room?", "Select room", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                try
                 {
-                    UpdateStatusRoom(room, IDroom);
-                    MessageBox.Show("Please wait to be browsed by lessor!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
-                    this.Hide();
-                    Login l = new Login();
-                    l.Show();
+                    if (MessageBox.Show("Are you sure select this room?", "Select room", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        UpdateStatusRoom(room, IDroom);
+                        MessageBox.Show("Please wait to be browsed by lessor!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        this.Hide();
+                        Login l = new Login();
+                        l.Show();
+                    }
+                    else DialogResult = DialogResult.Cancel;
                 }
-                else DialogResult = DialogResult.Cancel;
+                catch
+                {
+                    MessageBox.Show("Cann't connect to firestore!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Cann't connect to firestore!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select at least one!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            
         }
-
+        bool check_select(RadioButton[] IDroom)
+        {
+            foreach(RadioButton r in IDroom)
+            {
+                if (r.Checked)
+                    return true;
+            }
+            return false;
+        }
         
         async void UpdateStatusRoom(int[] room, RadioButton[] IDroom)
         {
