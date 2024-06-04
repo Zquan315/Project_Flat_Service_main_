@@ -45,6 +45,8 @@
             this.ChangeColorBtn = new System.Windows.Forms.Button();
             this.DelBtn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lvSearch = new System.Windows.Forms.ListView();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -76,8 +78,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.lvSearch = new System.Windows.Forms.ListView();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -268,6 +268,26 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Message";
             // 
+            // lvSearch
+            // 
+            this.lvSearch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2});
+            this.lvSearch.FullRowSelect = true;
+            this.lvSearch.HideSelection = false;
+            this.lvSearch.Location = new System.Drawing.Point(3, 104);
+            this.lvSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lvSearch.Name = "lvSearch";
+            this.lvSearch.Size = new System.Drawing.Size(375, 320);
+            this.lvSearch.TabIndex = 4;
+            this.lvSearch.UseCompatibleStateImageBehavior = false;
+            this.lvSearch.View = System.Windows.Forms.View.Details;
+            this.lvSearch.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvSearch_MouseDoubleClick);
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "";
+            this.columnHeader2.Width = 363;
+            // 
             // tbSearch
             // 
             this.tbSearch.Location = new System.Drawing.Point(3, 47);
@@ -400,49 +420,51 @@
             this.panel7.Controls.Add(this.label15);
             this.panel7.Controls.Add(this.label16);
             this.panel7.Controls.Add(this.tbAccount);
-            this.panel7.Location = new System.Drawing.Point(916, 6);
+            this.panel7.Location = new System.Drawing.Point(879, 6);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(483, 150);
+            this.panel7.Size = new System.Drawing.Size(520, 150);
             this.panel7.TabIndex = 8;
             // 
             // tbroom
             // 
             this.tbroom.CausesValidation = false;
             this.tbroom.Enabled = false;
+            this.tbroom.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbroom.Location = new System.Drawing.Point(194, 45);
             this.tbroom.Name = "tbroom";
-            this.tbroom.Size = new System.Drawing.Size(234, 31);
+            this.tbroom.Size = new System.Drawing.Size(234, 36);
             this.tbroom.TabIndex = 17;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Century", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(33, 48);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(97, 32);
+            this.label14.Size = new System.Drawing.Size(95, 33);
             this.label14.TabIndex = 16;
             this.label14.Text = "Room:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(34, 122);
+            this.label15.Location = new System.Drawing.Point(19, 115);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(481, 25);
+            this.label15.Size = new System.Drawing.Size(496, 25);
             this.label15.TabIndex = 15;
             this.label15.Text = "© 2024 - Copyright by Group 5 NT106.O21.ANTT";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Century", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(33, 5);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(125, 32);
+            this.label16.Size = new System.Drawing.Size(118, 33);
             this.label16.TabIndex = 13;
             this.label16.Text = "Account";
             // 
@@ -450,9 +472,10 @@
             // 
             this.tbAccount.CausesValidation = false;
             this.tbAccount.Enabled = false;
+            this.tbAccount.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAccount.Location = new System.Drawing.Point(194, 8);
             this.tbAccount.Name = "tbAccount";
-            this.tbAccount.Size = new System.Drawing.Size(234, 31);
+            this.tbAccount.Size = new System.Drawing.Size(234, 36);
             this.tbAccount.TabIndex = 0;
             // 
             // label2
@@ -498,7 +521,7 @@
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(0, 759);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(360, 120);
@@ -511,7 +534,7 @@
             // logoutBtn
             // 
             this.logoutBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.logoutBtn.Font = new System.Drawing.Font("Century Gothic", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutBtn.Location = new System.Drawing.Point(0, 888);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(360, 142);
@@ -524,7 +547,7 @@
             // chatBtn
             // 
             this.chatBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatBtn.Font = new System.Drawing.Font("Century Gothic", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chatBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chatBtn.Location = new System.Drawing.Point(0, 639);
             this.chatBtn.Name = "chatBtn";
             this.chatBtn.Size = new System.Drawing.Size(360, 120);
@@ -537,7 +560,7 @@
             // servicesBtn
             // 
             this.servicesBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.servicesBtn.Font = new System.Drawing.Font("Century Gothic", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicesBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.servicesBtn.Location = new System.Drawing.Point(0, 519);
             this.servicesBtn.Name = "servicesBtn";
             this.servicesBtn.Size = new System.Drawing.Size(360, 120);
@@ -550,7 +573,7 @@
             // infoBtn
             // 
             this.infoBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.infoBtn.Font = new System.Drawing.Font("Century Gothic", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoBtn.Location = new System.Drawing.Point(0, 399);
             this.infoBtn.Name = "infoBtn";
             this.infoBtn.Size = new System.Drawing.Size(360, 120);
@@ -563,7 +586,7 @@
             // costsBtn
             // 
             this.costsBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.costsBtn.Font = new System.Drawing.Font("Century Gothic", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costsBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.costsBtn.Location = new System.Drawing.Point(0, 279);
             this.costsBtn.Name = "costsBtn";
             this.costsBtn.Size = new System.Drawing.Size(360, 120);
@@ -577,7 +600,7 @@
             // 
             this.homeBtn.BackColor = System.Drawing.Color.White;
             this.homeBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.homeBtn.Font = new System.Drawing.Font("Century Gothic", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeBtn.Font = new System.Drawing.Font("Century", 22.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeBtn.Location = new System.Drawing.Point(0, 159);
             this.homeBtn.Name = "homeBtn";
             this.homeBtn.Size = new System.Drawing.Size(360, 120);
@@ -620,26 +643,6 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // lvSearch
-            // 
-            this.lvSearch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2});
-            this.lvSearch.FullRowSelect = true;
-            this.lvSearch.HideSelection = false;
-            this.lvSearch.Location = new System.Drawing.Point(3, 104);
-            this.lvSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lvSearch.Name = "lvSearch";
-            this.lvSearch.Size = new System.Drawing.Size(375, 320);
-            this.lvSearch.TabIndex = 4;
-            this.lvSearch.UseCompatibleStateImageBehavior = false;
-            this.lvSearch.View = System.Windows.Forms.View.Details;
-            this.lvSearch.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvSearch_MouseDoubleClick);
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "";
-            this.columnHeader2.Width = 363;
             // 
             // homechating
             // 
