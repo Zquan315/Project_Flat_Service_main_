@@ -10,6 +10,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Flat_Services_Application.tenant
 {
@@ -260,8 +261,17 @@ namespace Flat_Services_Application.tenant
 
         private void DelBtn_Click(object sender, EventArgs e)
         {
-            tbChat.Text = "";
+            tbChat.Text = tbSearch.Text = "";
             lvSearch.Items.Clear();
+            int i = 0;
+            foreach (ListViewItem item in lvMess.Items)
+            {
+                if (i % 2 == 0)
+                {
+                    item.BackColor = Color.White;
+                }
+                i++;
+            }
         }
 
         private void SendBtn_Click(object sender, EventArgs e)

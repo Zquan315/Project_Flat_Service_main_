@@ -230,8 +230,17 @@ namespace Flat_Services_Application.lessor
 
         private void DelBtn_Click(object sender, EventArgs e)
         {
-            tbChat.Text = "";
+            tbChat.Text = tbSearch.Text = "";
             lvSearch.Items.Clear();
+            int i = 0;
+            foreach (ListViewItem item in lvMess.Items)
+            {
+                if (i % 2 == 0)
+                {
+                    item.BackColor = Color.White;
+                }
+                i++;
+            }
         }
 
         private void SendBtn_Click(object sender, EventArgs e)

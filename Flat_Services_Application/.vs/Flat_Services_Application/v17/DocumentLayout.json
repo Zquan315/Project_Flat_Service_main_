@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\flat_services_application\\tenant\\homeinformation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|solutionrelative:flat_services_application\\tenant\\homeinformation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|q:\\project_laptrinhmang\\project_flat_service_main_\\flat_services_application\\flat_services_application\\lessor\\chat_lessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|solutionrelative:flat_services_application\\lessor\\chat_lessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|q:\\project_laptrinhmang\\project_flat_service_main_\\flat_services_application\\flat_services_application\\lessor\\chat_lessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|solutionrelative:flat_services_application\\lessor\\chat_lessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|q:\\project_laptrinhmang\\project_flat_service_main_\\flat_services_application\\flat_services_application\\tenant\\homechating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|solutionrelative:flat_services_application\\tenant\\homechating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A1FDC0D-76B7-439B-AB02-E68BFBE0B989}|Flat_Services_Application\\Flat_Services_Application.csproj|Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\flat_services_application\\tenant\\homechating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -35,18 +43,44 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "homeinformation.cs [Design]",
-              "DocumentMoniker": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\tenant\\homeinformation.cs",
-              "RelativeDocumentMoniker": "Flat_Services_Application\\tenant\\homeinformation.cs",
-              "ToolTip": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\tenant\\homeinformation.cs [Design]",
-              "RelativeToolTip": "Flat_Services_Application\\tenant\\homeinformation.cs [Design]",
+              "Title": "Chat_Lessor.cs",
+              "DocumentMoniker": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\lessor\\Chat_Lessor.cs",
+              "RelativeDocumentMoniker": "Flat_Services_Application\\lessor\\Chat_Lessor.cs",
+              "ToolTip": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\lessor\\Chat_Lessor.cs",
+              "RelativeToolTip": "Flat_Services_Application\\lessor\\Chat_Lessor.cs",
+              "ViewState": "AQIAANUAAAAAAAAAAAAQwPIAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T08:56:32.085Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-05T00:55:41.717Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Chat_Lessor.cs [Design]",
+              "DocumentMoniker": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\lessor\\Chat_Lessor.cs",
+              "RelativeDocumentMoniker": "Flat_Services_Application\\lessor\\Chat_Lessor.cs",
+              "ToolTip": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\lessor\\Chat_Lessor.cs [Design]",
+              "RelativeToolTip": "Flat_Services_Application\\lessor\\Chat_Lessor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T00:55:40.28Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "homechating.cs",
+              "DocumentMoniker": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\tenant\\homechating.cs",
+              "RelativeDocumentMoniker": "Flat_Services_Application\\tenant\\homechating.cs",
+              "ToolTip": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\tenant\\homechating.cs",
+              "RelativeToolTip": "Flat_Services_Application\\tenant\\homechating.cs",
+              "ViewState": "AQIAAPwAAAAAAAAAAAAYwBEBAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T00:52:27.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "homechating.cs [Design]",
               "DocumentMoniker": "Q:\\Project_LapTrinhMang\\Project_Flat_Service_main_\\Flat_Services_Application\\Flat_Services_Application\\tenant\\homechating.cs",
               "RelativeDocumentMoniker": "Flat_Services_Application\\tenant\\homechating.cs",
