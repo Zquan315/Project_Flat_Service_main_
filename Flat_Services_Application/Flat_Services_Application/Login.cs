@@ -127,7 +127,7 @@ namespace Flat_Services_Application
                 if (char.IsLetter(letter))
                 {
                     char letterOffset = char.IsUpper(letter) ? 'A' : 'a';
-                    letter = (char)((letter + shift - letterOffset) % 26 + letterOffset);
+                    letter = (char)((letter + shift - letterOffset + 26) % 26 + letterOffset);
                 }
                 else if (char.IsDigit(letter))
                 {
