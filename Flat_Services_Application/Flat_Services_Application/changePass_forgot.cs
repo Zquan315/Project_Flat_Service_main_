@@ -93,7 +93,7 @@ namespace Flat_Services_Application
                 else if (char.IsDigit(letter))
                 {
                     char digitOffset = '0';
-                    letter = (char)((letter + shift - digitOffset) % 10 + digitOffset);
+                    letter = (char)((letter + shift - digitOffset + 10) % 10 + digitOffset);
                 }
                 buffer[i] = letter;
             }
